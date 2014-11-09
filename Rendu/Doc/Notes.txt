@@ -1,0 +1,5 @@
+- Si besoin d'un effet de vitesse dans les déplacements, coup, ... utiliser un Trail Renderer
+- Voir l'utilisation des Physics matérials
+- Utilisation des LigthMap pour les effets visuel du niveaux
+- Voir le tuto openclassroom de vidal sur les effets visuel
+- Utilisation des normalMap dans le shader BumpedDiffuse
