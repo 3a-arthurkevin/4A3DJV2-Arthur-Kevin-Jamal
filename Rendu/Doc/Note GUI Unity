@@ -1,0 +1,11 @@
+GUI Unity
+
+Anchor pour le placement des éléments de la GUI
+
+Canvas Scaler pour la taille des éléments de la GUI
+Placer la Référence résolution à la résolution de base où les éléments sont biens placé
+dans le canvas scaler placer le Match à 0.5 pour avoir un bon compromis de taille d'élement
+
+http://docs.unity3d.com/Manual/HOWTO-UIMultiResolution.html
+http://blogs.unity3d.com/2014/05/28/overview-of-the-new-ui-system/
+http://blogs.unity3d.com/2014/06/30/unity-4-6-new-ui-world-space-canvas/
