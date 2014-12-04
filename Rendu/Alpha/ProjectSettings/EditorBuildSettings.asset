@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/splashEditorScreen.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/splashDevTeamScreen.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu.unity
   - enabled: 1
     path: Assets/Scenes/Planification.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Simulation.unity
