@@ -58,6 +58,7 @@
     <Compile Include="Assets\Scripts\ActionEventFramework\AbstractClasses\CustomEventScript.cs" />
     <Compile Include="Assets\Scripts\ActionEventFramework\Actions\LoadLevelActionScript.cs" />
     <Compile Include="Assets\Scripts\ActionEventFramework\Events\GetKeyDownEventScript.cs" />
+    <Compile Include="Assets\Scripts\ActionEventFramework\Events\OnButtonClick.cs" />
     <Compile Include="Assets\Scripts\ActionEventFramework\Events\TimerEventScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
