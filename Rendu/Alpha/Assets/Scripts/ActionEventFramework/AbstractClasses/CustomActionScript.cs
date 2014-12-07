@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿/**
+ * @Author : Arthur TORRENTE
+ * @Date : 07/12/2014
+ * @Desc : Classe abstraite des actions
+ */
+
+using UnityEngine;
 using System.Collections;
 
-/**
- * 
- */
 public abstract class CustomActionScript : MonoBehaviour
 {
     public enum RegisterTime

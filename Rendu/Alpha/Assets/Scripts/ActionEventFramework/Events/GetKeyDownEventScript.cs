@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/**
+ * @Author : Arthur TORRENTE
+ * @Date : 07/12/2014
+ * @Desc : Évènement d'appuis sur une touche
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class GetKeyDownEventScript : CustomEventScript

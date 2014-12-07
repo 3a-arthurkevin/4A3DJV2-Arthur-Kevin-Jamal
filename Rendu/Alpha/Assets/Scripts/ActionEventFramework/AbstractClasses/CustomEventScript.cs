@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/**
+ * @Author : Arthur TORRENTE
+ * @Date : 07/12/2014
+ * @Desc : Classe abstraite des évènements
+ */
+
+using UnityEngine;
 using System.Collections;
 
 /**

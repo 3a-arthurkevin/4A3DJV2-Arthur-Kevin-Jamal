@@ -57,6 +57,7 @@
     <Compile Include="Assets\Scripts\ActionEventFramework\AbstractClasses\CustomActionScript.cs" />
     <Compile Include="Assets\Scripts\ActionEventFramework\AbstractClasses\CustomEventScript.cs" />
     <Compile Include="Assets\Scripts\ActionEventFramework\Actions\LoadLevelActionScript.cs" />
+    <Compile Include="Assets\Scripts\ActionEventFramework\Actions\StopScript.cs" />
     <Compile Include="Assets\Scripts\ActionEventFramework\Events\GetKeyDownEventScript.cs" />
     <Compile Include="Assets\Scripts\ActionEventFramework\Events\OnButtonClick.cs" />
     <Compile Include="Assets\Scripts\ActionEventFramework\Events\TimerEventScript.cs" />
