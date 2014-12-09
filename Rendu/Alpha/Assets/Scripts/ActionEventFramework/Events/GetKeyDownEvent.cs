@@ -7,7 +7,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class GetKeyDownEventScript : CustomEventScript
+public class GetKeyDownEvent : CustomEventScript
 {
     public KeyCode m_keyCode;
 

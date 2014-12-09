@@ -7,9 +7,9 @@
 using UnityEngine;
 using System.Collections;
 
-public class StopScript : CustomActionScript
+public class StopAction : CustomActionScript
 {
-    protected override IEnumerator DoActionOnAvent(MonoBehaviour eventSender, GameObject args)
+    protected override IEnumerator DoActionOnEvent(MonoBehaviour eventSender, GameObject args)
     {
         throw new System.NotImplementedException();
     }

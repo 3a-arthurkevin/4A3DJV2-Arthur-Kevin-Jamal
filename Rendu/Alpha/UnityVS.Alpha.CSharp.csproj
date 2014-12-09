@@ -56,11 +56,16 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ActionEventFramework\AbstractClasses\CustomActionScript.cs" />
     <Compile Include="Assets\Scripts\ActionEventFramework\AbstractClasses\CustomEventScript.cs" />
-    <Compile Include="Assets\Scripts\ActionEventFramework\Actions\LoadLevelActionScript.cs" />
-    <Compile Include="Assets\Scripts\ActionEventFramework\Actions\StopScript.cs" />
-    <Compile Include="Assets\Scripts\ActionEventFramework\Events\GetKeyDownEventScript.cs" />
-    <Compile Include="Assets\Scripts\ActionEventFramework\Events\OnButtonClick.cs" />
-    <Compile Include="Assets\Scripts\ActionEventFramework\Events\TimerEventScript.cs" />
+    <Compile Include="Assets\Scripts\ActionEventFramework\Actions\EnableGameObjectAction.cs" />
+    <Compile Include="Assets\Scripts\ActionEventFramework\Actions\EnableScriptAction.cs" />
+    <Compile Include="Assets\Scripts\ActionEventFramework\Actions\LoadLevelAction.cs" />
+    <Compile Include="Assets\Scripts\ActionEventFramework\Actions\StopAction.cs" />
+    <Compile Include="Assets\Scripts\ActionEventFramework\Events\GetKeyDownEvent.cs" />
+    <Compile Include="Assets\Scripts\ActionEventFramework\Events\GetMouseClickEvent.cs" />
+    <Compile Include="Assets\Scripts\ActionEventFramework\Events\GetTouchScreenEvent.cs" />
+    <Compile Include="Assets\Scripts\ActionEventFramework\Events\OnButtonClickEvent.cs" />
+    <Compile Include="Assets\Scripts\ActionEventFramework\Events\RayCastWithCameraOnEnableEvent.cs" />
+    <Compile Include="Assets\Scripts\ActionEventFramework\Events\TimerEvent.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>

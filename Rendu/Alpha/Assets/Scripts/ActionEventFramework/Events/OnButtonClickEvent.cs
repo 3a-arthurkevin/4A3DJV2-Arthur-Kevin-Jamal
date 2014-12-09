@@ -7,7 +7,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class OnButtonClick : CustomEventScript
+public class OnButtonClickEvent : CustomEventScript
 {
     public void OnButtonClicked()
     {

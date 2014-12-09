@@ -114,7 +114,7 @@ public abstract class CustomActionScript : MonoBehaviour
     {
         if(m_events != null && m_events.Length > 0)
             foreach (CustomEventScript evt in m_events)
-                Debug.DrawLine(evt.transform.position, this.transform.position, Color.yellow);
+                Debug.DrawLine(evt.transform.position, this.transform.position, Color.green);
     }
 
     /** 
@@ -171,7 +171,7 @@ public abstract class CustomActionScript : MonoBehaviour
 
         do
         {
-            yield return StartCoroutine(DoActionOnAvent(eventSender, args));
+            yield return StartCoroutine(DoActionOnEvent(eventSender, args));
 
             if(m_delayBetweenTrigger > 0)
                 yield return new WaitForSeconds(m_delayBetweenTrigger);
@@ -181,5 +181,5 @@ public abstract class CustomActionScript : MonoBehaviour
         yield return null;
     }
 
-    protected abstract IEnumerator DoActionOnAvent(MonoBehaviour eventSender, GameObject args);
+    protected abstract IEnumerator DoActionOnEvent(MonoBehaviour eventSender, GameObject args);
 }

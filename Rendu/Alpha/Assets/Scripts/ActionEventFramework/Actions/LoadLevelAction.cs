@@ -7,11 +7,11 @@
 using UnityEngine;
 using System.Collections;
 
-public class LoadLevelActionScript : CustomActionScript
+public class LoadLevelAction : CustomActionScript
 {
     public string m_levelName;
 
-    protected override IEnumerator DoActionOnAvent(MonoBehaviour eventSender, GameObject args)
+    protected override IEnumerator DoActionOnEvent(MonoBehaviour eventSender, GameObject args)
     {
         Application.LoadLevel(m_levelName);
 

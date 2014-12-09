@@ -7,7 +7,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class TimerEventScript : CustomEventScript
+public class TimerEvent : CustomEventScript
 {
     public int m_time = 1;
 
