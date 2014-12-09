@@ -2,6 +2,7 @@
  * @Author : Arthur TORRENTE
  * @Date : 07/12/2014
  * @Desc : Évènement de click sur un bouton
+ * @LastModifier : Arthur TORRENTE
  */
 
 using UnityEngine;

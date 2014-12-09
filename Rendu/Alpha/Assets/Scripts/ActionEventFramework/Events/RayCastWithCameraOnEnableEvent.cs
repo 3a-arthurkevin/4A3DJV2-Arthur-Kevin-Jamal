@@ -1,4 +1,11 @@
-﻿using UnityEngine;
+﻿/**
+ * @Author : Arthur TORRENTE
+ * @Date : 07/12/2014
+ * @Desc : Lance un RayCast  depuis l'écran lorsque que le script est activé
+ * @LastModifier : Arthur TORRENTE
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class RayCastWithCameraOnEnableEvent : CustomEventScript

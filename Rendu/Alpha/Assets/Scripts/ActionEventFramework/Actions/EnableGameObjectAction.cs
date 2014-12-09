@@ -1,4 +1,11 @@
-﻿using UnityEngine;
+﻿/**
+ * @Author : Arthur TORRENTE
+ * @Date : 07/12/2014
+ * @Desc : Active un Game Object
+ * @LastModifier : Arthur TORRENTE
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class EnableGameObjectAction : CustomActionScript

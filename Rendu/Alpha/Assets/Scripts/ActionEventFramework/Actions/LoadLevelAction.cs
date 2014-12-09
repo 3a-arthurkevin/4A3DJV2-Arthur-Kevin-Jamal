@@ -2,6 +2,7 @@
  * @Author : Arthur TORRENTE
  * @Date : 07/12/2014
  * @Desc : Action de chargement d'un niveau
+ * @LastModifier : Arthur TORRENTE
  */
 
 using UnityEngine;
