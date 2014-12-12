@@ -67,6 +67,8 @@
     <Compile Include="Assets\Scripts\ActionEventFramework\Events\RayCastWithCameraOnEnableEvent.cs" />
     <Compile Include="Assets\Scripts\ActionEventFramework\Events\TimerEvent.cs" />
     <Compile Include="Assets\Scripts\GameManager\GameManagerScript.cs" />
+    <Compile Include="Assets\Scripts\UI\SlotActionContainer.cs" />
+    <Compile Include="Assets\Scripts\Utils\Constants.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>
