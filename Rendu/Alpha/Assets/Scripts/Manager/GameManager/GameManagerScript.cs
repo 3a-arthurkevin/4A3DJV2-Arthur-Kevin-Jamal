@@ -26,12 +26,6 @@ public class GameManagerScript : MonoBehaviour
      */
     public static GameManagerScript m_gameManager;
     
-    /* Tableau d'action choisit par le joueur */
-    protected static List<PlayerAction> m_playerAction;
-
-    public SlotActionContainer m_slotsAction;
-
-
     /**
      * Check Global instance is same instance of this
      */
@@ -40,8 +34,6 @@ public class GameManagerScript : MonoBehaviour
         if(m_gameManager == null)
         {
             DontDestroyOnLoad(gameObject);
-
-            m_playerAction = new List<PlayerAction>();
             m_gameManager = this;
         }
         else if(m_gameManager != this)
@@ -57,47 +49,5 @@ public class GameManagerScript : MonoBehaviour
      */
     void MergeGameManagerInstance()
     {
-        m_gameManager.m_slotsAction = m_slotsAction;
-    }
-
-    bool addActionIsPossible()
-    {
-        return m_playerAction.Count < Constants.MAXSIZEPLAYERACTION;
-    }
-
-    void addAction(PlayerAction action)
-    {
-        if(addActionIsPossible())
-            m_playerAction.Add(action);
-    }
-
-    public void addMoveAction()
-    {
-        addAction(PlayerAction.Move);
-    }
-
-    public void addJumpAction()
-    {
-        addAction(PlayerAction.Jump);
-    }
-
-    public void addUpperPunchAction()
-    {
-        addAction(PlayerAction.UpperPunch);
-    }
-
-    public void addLowerPunch()
-    {
-        addAction(PlayerAction.LowerPunch);
-    }
-
-    public void addUpperKick()
-    {
-        addAction(PlayerAction.UpperKick);
-    }
-
-    public void addLowerKick()
-    {
-        addAction(PlayerAction.LowerKick);
     }
 }
