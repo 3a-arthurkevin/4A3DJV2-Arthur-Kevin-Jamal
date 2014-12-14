@@ -35,8 +35,6 @@ public class RayCastWithCameraOnEnableEvent : CustomEventScript
 
         if (Physics.Raycast(ray, out hit, 100, m_layer.value))
             throwEvent(this, hit.collider.gameObject);
-        else
-            Debug.Log("Ray failed");
         
         enabled = false;
     }

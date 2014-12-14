@@ -1,7 +1,7 @@
 ﻿/**
  * @Author : Arthur TORRENTE
  * @Date : 07/12/2014
- * @Desc : Gestion de l'IHM
+ * @Desc : Gestion du réseaux
  * @LastModifier : Arthur TORRENTE
  */
 
@@ -48,6 +48,7 @@ public class NetworkManagerScript : MonoBehaviour
         set { m_maxPlayer = value; }
     }
 
+    /* Fait le matching playerID et NetworkPlayer */
     private List<NetworkPlayer> m_players;
     public List<NetworkPlayer> Players
     {
@@ -118,16 +119,23 @@ public class NetworkManagerScript : MonoBehaviour
 
     void OnPlayerConnected(NetworkPlayer player)
     {
-        if(m_players.Count < m_maxPlayer)
+        if(m_setup)
         {
-            m_players.Add(player);
-
-            if( m_players.Count == m_maxPlayer - 1)
+            if (m_players.Count < m_maxPlayer)
             {
-                Network.RemoveRPCsInGroup(0);
-                Network.RemoveRPCsInGroup(1);
-                m_networkView.RPC("RPCLoadLevel", RPCMode.AllBuffered, "Planification");
+                m_players.Add(player);
+
+                if (m_players.Count == m_maxPlayer - 1)
+                {
+                    Network.RemoveRPCsInGroup(0);
+                    Network.RemoveRPCsInGroup(1);
+                    m_networkView.RPC("RPCLoadLevel", RPCMode.AllBuffered, "Planification");
+                }
             }
+        }
+        else
+        {
+            Debug.LogError("New Connection not Allow");
         }
     }
 
