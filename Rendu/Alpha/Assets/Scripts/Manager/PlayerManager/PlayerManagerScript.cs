@@ -30,4 +30,9 @@ public class PlayerManagerScript : MonoBehaviour
         m_instance.m_playerOne.Transform = m_playerOne.Transform;
         m_instance.m_playerTwo.Transform = m_playerTwo.Transform;
     }
+
+    public void tryAddAction(int playerId, PlayerAction action)
+    {
+        
+    }
 }

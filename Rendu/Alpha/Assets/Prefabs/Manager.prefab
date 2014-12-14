@@ -71,6 +71,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400008}
+  - 114: {fileID: 11400004}
+  - 148: {fileID: 14800002}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -156,7 +158,6 @@ MonoBehaviour:
   m_networkView: {fileID: 14800000}
   m_uiManager: {fileID: 11400002}
   m_playerManager: {fileID: 0}
-  m_buildServer: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -188,6 +189,23 @@ MonoBehaviour:
   m_guardSprite: {fileID: 21300000, guid: a5887e187b3c31641b5e9ee441bbaa23, type: 3}
   m_playerChooseAction: {fileID: 0}
   m_healtBar: []
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1162c38f206e68d4ea8ecd3bbf8203d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_networkView: {fileID: 14800002}
+  m_buildServer: 1
+  m_ip: 127.0.0.1
+  m_port: 9000
+  m_maxPlayer: 2
+  m_setup: 1
 --- !u!148 &14800000
 NetworkView:
   m_ObjectHideFlags: 1
@@ -197,6 +215,18 @@ NetworkView:
   m_Enabled: 1
   m_StateSynchronization: 1
   m_Observed: {fileID: 11400000}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
+--- !u!148 &14800002
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 400008}
   m_ViewID:
     m_ID: 0
     m_Type: 0

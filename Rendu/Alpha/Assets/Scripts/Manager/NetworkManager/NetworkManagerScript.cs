@@ -9,20 +9,7 @@ public class NetworkManagerScript : MonoBehaviour
     [SerializeField]
     private NetworkView m_networkView;
 
-    private string m_ip;
-    public string Ip
-    {
-        get { return m_ip; }
-        set { m_ip = value; }
-    }
-
-    private short m_port;
-    public short Port
-    {
-        get { return m_port; }
-        set { m_port = value; }
-    }
-
+    [SerializeField]
     private bool m_buildServer;
     public bool BuildServer
     {
@@ -30,6 +17,23 @@ public class NetworkManagerScript : MonoBehaviour
         set { m_buildServer = value; }
     }
 
+    [SerializeField]
+    private string m_ip;
+    public string Ip
+    {
+        get { return m_ip; }
+        set { m_ip = value; }
+    }
+
+    [SerializeField]
+    private int m_port;
+    public int Port
+    {
+        get { return m_port; }
+        set { m_port = value; }
+    }
+
+    [SerializeField]
     private int m_maxPlayer;
     public int MaxPlayer
     {
@@ -41,6 +45,14 @@ public class NetworkManagerScript : MonoBehaviour
     public List<NetworkPlayer> Players
     {
         get { return m_players; }
+    }
+
+    [SerializeField]
+    private bool m_setup;
+    public bool Setup
+    {
+        get { return m_setup; }
+        set { m_setup = value; }
     }
 
 
@@ -62,12 +74,12 @@ public class NetworkManagerScript : MonoBehaviour
 
     void mergeInstance()
     {
-        
+        m_instance.Setup = m_setup;
     }
 
 	void Start ()
     {
-        if (Application.loadedLevelName == "Lobby")
+        if(m_setup)
         {
             if (m_buildServer)
                 setupServer();
@@ -84,7 +96,7 @@ public class NetworkManagerScript : MonoBehaviour
         if (err != NetworkConnectionError.NoError)
             Debug.LogError(err.ToString());
         else
-            Debug.Log("Server start");
+            Debug.LogError("Server start");
     }
 
     void setupClient()
@@ -116,7 +128,11 @@ public class NetworkManagerScript : MonoBehaviour
     void RPCLoadLevel(string name)
     {
         Network.SetSendingEnabled(0, false);
-
         Network.isMessageQueueRunning = false;
+    }
+
+    public int getPlayerId(NetworkPlayer player)
+    {
+        return m_players.FindIndex(p => player == p);
     }
 }

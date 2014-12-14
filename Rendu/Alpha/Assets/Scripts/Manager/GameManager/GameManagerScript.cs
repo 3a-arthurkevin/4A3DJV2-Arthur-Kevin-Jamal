@@ -26,6 +26,9 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField]
     private PlayerManagerScript m_playerManager;
 
+    [SerializeField]
+    private NetworkManagerScript m_networkManager;
+
     /**
      * Check Global instance is same instance of this
      */
@@ -51,16 +54,21 @@ public class GameManagerScript : MonoBehaviour
     {
     }
 
-    void Start()
-    {
-    }
-
     [RPC]
     void tryAddAction(NetworkPlayer player, PlayerAction action)
     {
         if (Network.isServer)
         {
-            
+            int playerId = m_networkManager.getPlayerId(player);
+
+            if(playerId >= 0)
+            {
+                
+            }
+            else
+            {
+                Debug.LogError("Player not found");
+            }
         }
         else
         {
