@@ -7,16 +7,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{8AF2BEBE-941F-6280-EF02-07D419482F96}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>4.6.0f3</UnityVersion>
@@ -69,8 +67,13 @@
     <Compile Include="Assets\Scripts\ActionEventFramework\Events\RayCastWithCameraOnEnableEvent.cs" />
     <Compile Include="Assets\Scripts\ActionEventFramework\Events\TimerEvent.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManager\GameManagerScript.cs" />
-    <Compile Include="Assets\Scripts\Player\UI\UIManagerScript.cs" />
+    <Compile Include="Assets\Scripts\Manager\NetworkManager\NetworkManagerScript.cs" />
+    <Compile Include="Assets\Scripts\Manager\PlayerManager\PlayerManagerScript.cs" />
+    <Compile Include="Assets\Scripts\Manager\UIManager\AddActionScript.cs" />
+    <Compile Include="Assets\Scripts\Manager\UIManager\UIManagerScript.cs" />
+    <Compile Include="Assets\Scripts\Player\Utils\PlayerData.cs" />
     <Compile Include="Assets\Scripts\Utils\Constants.cs" />
+    <Compile Include="Assets\Scripts\Utils\PlayerAction.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>
