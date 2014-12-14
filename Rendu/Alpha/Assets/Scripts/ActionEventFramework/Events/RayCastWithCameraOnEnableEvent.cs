@@ -25,7 +25,6 @@ public class RayCastWithCameraOnEnableEvent : CustomEventScript
 	
     void OnEnable()
     {
-
 #if UNITY_ANDROID
         Vector3 ori = new Vector3(Input.GetTouch(m_touchId).position.x, Input.GetTouch(m_touchId).position.y, m_camera.nearClipPlane);
 #else
@@ -34,8 +33,10 @@ public class RayCastWithCameraOnEnableEvent : CustomEventScript
         Ray ray = m_camera.ScreenPointToRay(ori);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, float.MaxValue, m_layer.value))
+        if (Physics.Raycast(ray, out hit, 100, m_layer.value))
             throwEvent(this, hit.collider.gameObject);
+        else
+            Debug.Log("Ray failed");
         
         enabled = false;
     }

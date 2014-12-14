@@ -8,6 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
+  - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -157,7 +158,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_networkView: {fileID: 14800000}
   m_uiManager: {fileID: 11400002}
-  m_playerManager: {fileID: 0}
+  m_playerManager: {fileID: 11400006}
+  m_networkManager: {fileID: 11400004}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -201,11 +203,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_networkView: {fileID: 14800002}
-  m_buildServer: 1
+  m_buildServer: 0
   m_ip: 127.0.0.1
   m_port: 9000
   m_maxPlayer: 2
   m_setup: 1
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3fcd5bfc1598a84c8e7c1bd34aab76f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!148 &14800000
 NetworkView:
   m_ObjectHideFlags: 1

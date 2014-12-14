@@ -32,6 +32,8 @@ GameObject:
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400014}
+  - 114: {fileID: 11400012}
   m_Layer: 8
   m_Name: UIManager
   m_TagString: Untagged
@@ -319,7 +321,8 @@ MonoBehaviour:
   m_repeatTimeBounded: 0
   m_repeatTime: 0
   m_registerTime: 0
-  m_gameObject: {fileID: 0}
+  m_gameObject:
+  - {fileID: 0}
   m_active: 1
 --- !u!114 &11400002
 MonoBehaviour:
@@ -362,7 +365,8 @@ MonoBehaviour:
   m_repeatTimeBounded: 0
   m_repeatTime: 0
   m_registerTime: 0
-  m_script: {fileID: 11400002}
+  m_script:
+  - {fileID: 11400002}
   m_active: 1
 --- !u!114 &11400006
 MonoBehaviour:
@@ -404,6 +408,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playerAnimator: {fileID: 9500002}
+--- !u!114 &11400012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a07347b2d1bf324abbf2e68ca5e13d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_events:
+  - {fileID: 11400014}
+  m_maxTriggerCount: 2147483647
+  m_triggeredCount: 0
+  m_delay: 0
+  m_delayBetweenTrigger: 0
+  m_oneAtTime: 0
+  m_repeated: 0
+  m_repeatCountsBounded: 0
+  m_repeatCount: 0
+  m_repeatTimeBounded: 0
+  m_repeatTime: 0
+  m_registerTime: 0
+  m_gameObject:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 100002}
+  m_active: 0
+--- !u!114 &11400014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b28c2c0ab1c71a4b8781a2fc197f45c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_isServer: 1
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -11,14 +11,15 @@ using System.Collections;
 public class SetEnableScriptAction : CustomActionScript
 {
     [SerializeField]
-    private MonoBehaviour m_script;
+    private MonoBehaviour[] m_script;
 
     [SerializeField]
     private bool m_active;
 
     protected override IEnumerator DoActionOnEvent(MonoBehaviour eventSender, GameObject args)
     {
-        m_script.enabled = m_active;
+        foreach(MonoBehaviour script in m_script)
+            script.enabled = m_active;
 
         yield return null;
     }

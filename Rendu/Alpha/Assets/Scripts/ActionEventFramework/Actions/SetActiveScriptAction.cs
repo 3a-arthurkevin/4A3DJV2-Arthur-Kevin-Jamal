@@ -11,14 +11,15 @@ using System.Collections;
 public class SetActiveScriptAction : CustomActionScript
 {
     [SerializeField]
-    private GameObject m_gameObject;
+    private GameObject[] m_gameObject;
 
     [SerializeField]
     private bool m_active;
 
     protected override IEnumerator DoActionOnEvent(MonoBehaviour eventSender, GameObject args)
     {
-        m_gameObject.SetActive(m_active);
+        foreach(GameObject go in m_gameObject)
+            go.SetActive(m_active);
 
         yield return null;
     }
