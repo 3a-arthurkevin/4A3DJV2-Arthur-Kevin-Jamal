@@ -57,10 +57,7 @@
     <Compile Include="Assets\Scripts\ActionEventFramework\AbstractClasses\CustomActionScript.cs" />
     <Compile Include="Assets\Scripts\ActionEventFramework\AbstractClasses\CustomEventScript.cs" />
     <Compile Include="Assets\Scripts\ActionEventFramework\Actions\LoadLevelAction.cs" />
-    <Compile Include="Assets\Scripts\ActionEventFramework\Actions\Player\ApplyHighKickDamageAction.cs" />
-    <Compile Include="Assets\Scripts\ActionEventFramework\Actions\Player\ApplyHighPunchDamageAction.cs" />
-    <Compile Include="Assets\Scripts\ActionEventFramework\Actions\Player\ApplyLowKickDamageAction.cs" />
-    <Compile Include="Assets\Scripts\ActionEventFramework\Actions\Player\ApplyLowPunchDamageAction.cs" />
+    <Compile Include="Assets\Scripts\ActionEventFramework\Actions\Player\HitAction.cs" />
     <Compile Include="Assets\Scripts\ActionEventFramework\Actions\SetActiveScriptAction.cs" />
     <Compile Include="Assets\Scripts\ActionEventFramework\Actions\SetEnableScriptAction.cs" />
     <Compile Include="Assets\Scripts\ActionEventFramework\Actions\StopAction.cs" />
@@ -69,7 +66,7 @@
     <Compile Include="Assets\Scripts\ActionEventFramework\Events\GetTouchScreenEvent.cs" />
     <Compile Include="Assets\Scripts\ActionEventFramework\Events\IsServerOrClientNetworkEvent.cs" />
     <Compile Include="Assets\Scripts\ActionEventFramework\Events\OnButtonClickEvent.cs" />
-    <Compile Include="Assets\Scripts\ActionEventFramework\Events\Player\HitEnemyEvent.cs" />
+    <Compile Include="Assets\Scripts\ActionEventFramework\Events\OnTriggerEnterEvent.cs" />
     <Compile Include="Assets\Scripts\ActionEventFramework\Events\RayCastWithCameraOnEnableEvent.cs" />
     <Compile Include="Assets\Scripts\ActionEventFramework\Events\TimerEvent.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManager\GameManagerScript.cs" />
@@ -79,10 +76,6 @@
     <Compile Include="Assets\Scripts\Manager\UIManager\AddActionScript.cs" />
     <Compile Include="Assets\Scripts\Manager\UIManager\UIManagerScript.cs" />
     <Compile Include="Assets\Scripts\Player\Animation\CharacterAnimationsScript.cs" />
-    <Compile Include="Assets\Scripts\Player\Behaviors\ApplyDamage\ApplyHighKickDamageScript.cs" />
-    <Compile Include="Assets\Scripts\Player\Behaviors\ApplyDamage\ApplyHighPunchDamageScript.cs" />
-    <Compile Include="Assets\Scripts\Player\Behaviors\ApplyDamage\ApplyLowKickDamageScript.cs" />
-    <Compile Include="Assets\Scripts\Player\Behaviors\ApplyDamage\ApplyLowPunchDamageScript.cs" />
     <Compile Include="Assets\Scripts\Player\UI\PlayerUIManagerScript.cs" />
     <Compile Include="Assets\Scripts\Player\Utils\PlayerData.cs" />
     <Compile Include="Assets\Scripts\Utils\Constants.cs" />

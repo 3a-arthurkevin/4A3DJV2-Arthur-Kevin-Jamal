@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HitEnemyEvent : CustomEventScript 
+public class OnTriggerEnterEvent : CustomEventScript
 {
     void OnTriggerEnter(Collider col)
     {

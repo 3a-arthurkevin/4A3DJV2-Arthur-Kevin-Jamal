@@ -14,6 +14,9 @@ public class NetworkManagerScript : MonoBehaviour
     public static NetworkManagerScript m_instance;
 
     [SerializeField]
+    private GameManagerScript m_gameManager;
+
+    [SerializeField]
     private NetworkView m_networkView;
 
     [SerializeField]
@@ -123,20 +126,28 @@ public class NetworkManagerScript : MonoBehaviour
         {
             if (m_players.Count < m_maxPlayer)
             {
-                m_players.Add(player);
+                Debug.LogError("Player add" + player.ToString());
+                m_networkView.RPC("addPlayer", RPCMode.AllBuffered, player);
 
-                if (m_players.Count == m_maxPlayer - 1)
+                /*if (m_players.Count == m_maxPlayer - 1)
                 {
                     Network.RemoveRPCsInGroup(0);
                     Network.RemoveRPCsInGroup(1);
                     m_networkView.RPC("RPCLoadLevel", RPCMode.AllBuffered, "Planification");
-                }
+                }*/
             }
         }
         else
         {
             Debug.LogError("New Connection not Allow");
         }
+    }
+
+    [RPC]
+    void addPlayer(NetworkPlayer newPlayer)
+    {
+        m_players.Add(newPlayer);
+        m_gameManager.newPlayer(m_players.Count - 1);
     }
 
     [RPC]
@@ -148,6 +159,10 @@ public class NetworkManagerScript : MonoBehaviour
 
     public int getPlayerId(NetworkPlayer player)
     {
-        return m_players.FindIndex(p => player == p);
+        for (int i = 0; i < m_players.Count; ++i)
+            if (m_players[i] == player)
+                return i;
+
+        return -1;
     }
 }

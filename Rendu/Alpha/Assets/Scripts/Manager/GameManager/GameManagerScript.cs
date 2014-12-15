@@ -54,31 +54,25 @@ public class GameManagerScript : MonoBehaviour
     {
     }
 
-    [RPC]
-    void tryAddAction(NetworkPlayer player, PlayerAction action)
+    public void newPlayer(int playerId)
     {
-        if (Network.isServer)
-        {
-            int playerId = m_networkManager.getPlayerId(player);
-
-            if(playerId >= 0)
-            {
-                
-            }
-            else
-            {
-                Debug.LogError("Player not found");
-            }
-        }
-        else
-        {
-            m_uiManager.appendAction(action);
-            m_uiManager.displayChooseAction(false);
-        }
+        m_playerManager.addPlayer(playerId);
     }
 
     public void pushAction(PlayerAction action)
     {
-        m_networkView.RPC("tryAddAction", RPCMode.Server, Network.player, action);
+        Debug.LogError("Push action " + action);
+
+        int playerId = m_networkManager.getPlayerId(Network.player);
+
+        if (playerId >= 0)
+        {
+            m_playerManager.pushAction(playerId, action);
+            m_uiManager.appendAction(action);
+        }
+        else
+            Debug.LogError("Player id invalid");
+
+        m_uiManager.displayChooseAction(false);
     }
 }

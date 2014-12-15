@@ -1,7 +1,7 @@
 ﻿/**
  * @Author : Arthur TORRENTE
  * @Date : 07/12/2014
- * @Desc : Gestion de l'IHM
+ * @Desc : Gestion des joueurs
  * @LastModifier : Arthur TORRENTE
  */
 
@@ -38,8 +38,24 @@ public class PlayerManagerScript : MonoBehaviour
         m_instance.m_playerTwo.Transform = m_playerTwo.Transform;
     }
 
-    public void tryAddAction(int playerId, PlayerAction action)
+    public void addPlayer(int playerId)
     {
-        
+        if (playerId == 0)
+            m_playerOne = new PlayerData(playerId);
+
+        else
+            m_playerTwo = new PlayerData(playerId);
+    }
+
+    public void pushAction(int playerId, PlayerAction action)
+    {
+        PlayerData player = (playerId == m_playerOne.PlayerId) ? m_playerOne : m_playerTwo;
+
+        if (player.PlayerAction.Count < Constants.MAXSIZEPLAYERACTION)
+        {
+            player.PlayerAction.Add(action);
+        }
+        else
+            Debug.LogError("Player " + playerId.ToString() + " has to much action");
     }
 }

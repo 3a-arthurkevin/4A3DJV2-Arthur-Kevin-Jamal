@@ -583,41 +583,9 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110273667}
+      first: {fileID: 0}
       second:
-      - {fileID: 110136964}
-    data:
-      first: {fileID: 110233856}
-      second:
-      - {fileID: 110177616}
-    data:
-      first: {fileID: 110294557}
-      second:
-      - {fileID: 110156240}
-    data:
-      first: {fileID: 110265622}
-      second:
-      - {fileID: 110147057}
-    data:
-      first: {fileID: 110254298}
-      second:
-      - {fileID: 110116241}
-    data:
-      first: {fileID: 110225358}
-      second:
-      - {fileID: 110178755}
-    data:
-      first: {fileID: 110208491}
-      second:
-      - {fileID: 110100505}
-    data:
-      first: {fileID: 110250792}
-      second:
-      - {fileID: 110115213}
-    data:
-      first: {fileID: 110237627}
-      second:
-      - {fileID: 110117669}
+      - {fileID: 110100000}
     data:
       first: {fileID: 110200000}
       second:
@@ -630,9 +598,41 @@ StateMachine:
       - {fileID: 110142423}
       - {fileID: 110173504}
     data:
-      first: {fileID: 0}
+      first: {fileID: 110237627}
       second:
-      - {fileID: 110100000}
+      - {fileID: 110117669}
+    data:
+      first: {fileID: 110250792}
+      second:
+      - {fileID: 110115213}
+    data:
+      first: {fileID: 110208491}
+      second:
+      - {fileID: 110100505}
+    data:
+      first: {fileID: 110225358}
+      second:
+      - {fileID: 110178755}
+    data:
+      first: {fileID: 110254298}
+      second:
+      - {fileID: 110116241}
+    data:
+      first: {fileID: 110265622}
+      second:
+      - {fileID: 110147057}
+    data:
+      first: {fileID: 110294557}
+      second:
+      - {fileID: 110156240}
+    data:
+      first: {fileID: 110233856}
+      second:
+      - {fileID: 110177616}
+    data:
+      first: {fileID: 110273667}
+      second:
+      - {fileID: 110136964}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: -72, y: 108, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
