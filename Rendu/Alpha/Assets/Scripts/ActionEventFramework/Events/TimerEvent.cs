@@ -12,7 +12,7 @@ public class TimerEvent : CustomEventScript
 {
     public int m_time = 1;
 
-    IEnumerator Start()
+    public new IEnumerator Start()
     {
         yield return new WaitForSeconds(m_time);
 

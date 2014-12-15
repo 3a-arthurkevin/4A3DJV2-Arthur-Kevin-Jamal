@@ -393,7 +393,7 @@ MonoBehaviour:
   m_repeatTime: 0
   m_registerTime: 0
   m_playerManager: {fileID: 0}
-  m_damage: 0
+  m_damage: 20
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -418,7 +418,7 @@ MonoBehaviour:
   m_repeatTime: 0
   m_registerTime: 0
   m_playerManager: {fileID: 0}
-  m_damage: 0
+  m_damage: 10
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -444,7 +444,7 @@ MonoBehaviour:
   m_repeatTime: 0
   m_registerTime: 0
   m_playerManager: {fileID: 0}
-  m_damage: 0
+  m_damage: 30
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -470,7 +470,7 @@ MonoBehaviour:
   m_repeatTime: 0
   m_registerTime: 0
   m_playerManager: {fileID: 0}
-  m_damage: 0
+  m_damage: 20
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
