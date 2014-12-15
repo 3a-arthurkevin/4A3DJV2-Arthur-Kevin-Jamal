@@ -26,7 +26,7 @@ public class CharacterAnimationsScript : MonoBehaviour {
      * 9    TakeDamage
      */
 
-    public void lunchAction(int value)
+    public void LunchAction(int value)
     {
         m_playerAnimator.SetInteger("IdAction", value);
     }
