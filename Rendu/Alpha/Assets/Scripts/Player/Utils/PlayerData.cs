@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [System.Serializable]
-public struct PlayerData
+public class PlayerData
 {
     private int m_playerId;
     public int PlayerId
@@ -27,20 +28,20 @@ public struct PlayerData
         }
     }
 
-    private PlayerAction[] m_playerAction;
-    public PlayerAction[] PlayerAction
+    private List<PlayerAction> m_playerAction;
+    public List<PlayerAction> PlayerAction
     {
         get { return m_playerAction; }
     }
 
-    public PlayerData(int playerId, Transform transform = null, int health = 100, PlayerAction[] playerAction = null)
+    public PlayerData(int playerId, Transform transform = null, int health = 100, List<PlayerAction> playerAction = null)
     {
         m_playerId = playerId;
         m_transform = transform;
         m_health = health;
 
         if (playerAction == null)
-            m_playerAction = new PlayerAction[Constants.MAXSIZEPLAYERACTION];
+            m_playerAction = new List<PlayerAction>();
         else
             m_playerAction = playerAction;
     }

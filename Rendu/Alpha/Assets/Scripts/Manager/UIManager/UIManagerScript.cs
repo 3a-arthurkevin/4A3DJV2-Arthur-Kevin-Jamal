@@ -19,6 +19,8 @@ public class UIManagerScript : MonoBehaviour
     [SerializeField]
     private Image[] m_playerActionsImages;
 
+    private int m_currentActionNumber;
+
     [SerializeField]
     private Sprite m_errorSprite;
 
@@ -128,7 +130,7 @@ public class UIManagerScript : MonoBehaviour
                     break;
 
                 case PlayerAction.Guard:
-                    sprite = m_lowKickSprite;
+                    sprite = m_guardSprite;
                     break;
 
                 default:
@@ -136,7 +138,9 @@ public class UIManagerScript : MonoBehaviour
                     break;
             }
 
+            ++m_currentActionNumber;
             m_playerActionsImages[emptySlot].sprite = sprite;
+            m_playerActionsImages[emptySlot].enabled = true;
         }
     }
 
@@ -145,7 +149,13 @@ public class UIManagerScript : MonoBehaviour
         if (slot < 0 || slot > Constants.MAXSIZEPLAYERACTION)
             Debug.Log("Remove en dehors du tableau");
         else
-            m_playerActionsImages[slot].enabled = false;
+        {
+            for (int i = slot; i < Constants.MAXSIZEPLAYERACTION - 1; ++i)
+                m_playerActionsImages[i].sprite = m_playerActionsImages[i + 1].sprite;
+
+            m_playerActionsImages[m_currentActionNumber].enabled = false;
+            --m_currentActionNumber;
+        }
     }
 
     void setHealt(int player, int value)
