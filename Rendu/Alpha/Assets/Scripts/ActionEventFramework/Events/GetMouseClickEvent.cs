@@ -27,7 +27,7 @@ public class GetMouseClickEvent : CustomEventScript
     [SerializeField]
     private ScreenTouchAction[] m_mouseButtonAction;
 
-    void Start()
+    public override void Start()
     {
 #if UNITY_ANDROID
         enabled = false;

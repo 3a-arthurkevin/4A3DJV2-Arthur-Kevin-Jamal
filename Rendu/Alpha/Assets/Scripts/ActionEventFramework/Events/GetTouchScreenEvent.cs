@@ -20,7 +20,7 @@ public class GetTouchScreenEvent : CustomEventScript
     [SerializeField]
     private TouchData[] m_touch;
 
-	void Start ()
+	public override void Start ()
     {
 #if !UNITY_ANDROID
         enabled = false;

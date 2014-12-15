@@ -29,4 +29,7 @@ public abstract class CustomEventScript : MonoBehaviour
         if (m_functionsWasCalled != null)
             m_functionsWasCalled(eventSender, args);
     }
+
+    public virtual void Start()
+    { /* Use juste for display Enable/Disable checkBox into inspector for Child */ }
 }

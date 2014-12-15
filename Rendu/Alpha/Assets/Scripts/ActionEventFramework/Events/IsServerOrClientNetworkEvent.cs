@@ -6,7 +6,7 @@ public class IsServerOrClientNetworkEvent : CustomEventScript
     [SerializeField]
     private bool m_isServer;
 
-    void Start()
+    public override void Start()
     {
         if (m_isServer)
         {
