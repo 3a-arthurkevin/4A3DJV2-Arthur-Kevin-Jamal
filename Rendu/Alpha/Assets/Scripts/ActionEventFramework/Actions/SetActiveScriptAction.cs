@@ -1,7 +1,7 @@
 ﻿/**
  * @Author : Arthur TORRENTE
  * @Date : 07/12/2014
- * @Desc : Active un Game Object
+ * @Desc : Active une liste de Game Object
  * @LastModifier : Arthur TORRENTE
  */
 

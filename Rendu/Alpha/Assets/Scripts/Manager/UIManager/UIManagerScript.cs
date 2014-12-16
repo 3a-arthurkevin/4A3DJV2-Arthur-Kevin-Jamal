@@ -19,6 +19,9 @@ public class UIManagerScript : MonoBehaviour
     [SerializeField]
     private Image[] m_playerActionsImages;
 
+    [SerializeField]
+    private Button[] m_playerActionButton;
+
     private int m_currentActionNumber;
 
     [SerializeField]
@@ -141,6 +144,7 @@ public class UIManagerScript : MonoBehaviour
             ++m_currentActionNumber;
             m_playerActionsImages[emptySlot].sprite = sprite;
             m_playerActionsImages[emptySlot].enabled = true;
+            m_playerActionButton[emptySlot].enabled = true;
         }
     }
 
@@ -150,10 +154,11 @@ public class UIManagerScript : MonoBehaviour
             Debug.Log("Remove en dehors du tableau");
         else
         {
-            for (int i = slot; i < Constants.MAXSIZEPLAYERACTION - 1; ++i)
+            for (int i = slot; i < m_currentActionNumber - 1; ++i)
                 m_playerActionsImages[i].sprite = m_playerActionsImages[i + 1].sprite;
 
-            m_playerActionsImages[m_currentActionNumber].enabled = false;
+            m_playerActionsImages[m_currentActionNumber - 1].enabled = false;
+            m_playerActionButton[m_currentActionNumber - 1].enabled = false;
             --m_currentActionNumber;
         }
     }

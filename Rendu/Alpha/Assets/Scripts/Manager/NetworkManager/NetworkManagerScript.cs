@@ -105,9 +105,9 @@ public class NetworkManagerScript : MonoBehaviour
         NetworkConnectionError err = Network.InitializeServer(m_maxPlayer, m_port, !Network.HavePublicAddress());
 
         if (err != NetworkConnectionError.NoError)
-            Debug.LogError(err.ToString());
+            Debug.Log(err.ToString());
         else
-            Debug.LogError("Server start");
+            Debug.Log("Server start");
     }
 
     void setupClient()
@@ -115,9 +115,9 @@ public class NetworkManagerScript : MonoBehaviour
         NetworkConnectionError err = Network.Connect(m_ip, m_port);
 
         if (err != NetworkConnectionError.NoError)
-            Debug.LogError(err.ToString());
+            Debug.Log(err.ToString());
         else
-            Debug.LogError("Client connect");
+            Debug.Log("Client connect");
     }
 
     void OnPlayerConnected(NetworkPlayer player)
@@ -126,7 +126,7 @@ public class NetworkManagerScript : MonoBehaviour
         {
             if (m_players.Count < m_maxPlayer)
             {
-                Debug.LogError("Player add" + player.ToString());
+                Debug.Log("Player add" + player.ToString());
                 m_networkView.RPC("addPlayer", RPCMode.AllBuffered, player);
 
                 /*if (m_players.Count == m_maxPlayer - 1)
@@ -139,7 +139,7 @@ public class NetworkManagerScript : MonoBehaviour
         }
         else
         {
-            Debug.LogError("New Connection not Allow");
+            Debug.Log("New Connection not Allow");
         }
     }
 

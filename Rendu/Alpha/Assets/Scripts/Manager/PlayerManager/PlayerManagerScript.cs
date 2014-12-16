@@ -56,6 +56,21 @@ public class PlayerManagerScript : MonoBehaviour
             player.PlayerAction.Add(action);
         }
         else
-            Debug.LogError("Player " + playerId.ToString() + " has to much action");
+            Debug.Log("Player " + playerId.ToString() + " has to much action");
+    }
+
+    public void removeAction(int playerId, int index)
+    {
+        PlayerData player = (playerId == m_playerOne.PlayerId) ? m_playerOne : m_playerTwo;
+
+        if (player.PlayerAction.Count > 0 && index >= 0 && index < player.PlayerAction.Count)
+        {
+            for(int i = index; i < player.PlayerAction.Count - 1; ++i)
+                player.PlayerAction[i] = player.PlayerAction[i + 1];
+
+            player.PlayerAction.RemoveAt(player.PlayerAction.Count - 1);
+        }
+        else
+            Debug.Log("Invalid Index");
     }
 }

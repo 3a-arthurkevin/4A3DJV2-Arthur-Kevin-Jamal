@@ -1,7 +1,7 @@
 ﻿/**
  * @Author : Arthur TORRENTE
  * @Date : 07/12/2014
- * @Desc : Active un script
+ * @Desc : Active une liste de script
  * @LastModifier : Arthur TORRENTE
  */
 

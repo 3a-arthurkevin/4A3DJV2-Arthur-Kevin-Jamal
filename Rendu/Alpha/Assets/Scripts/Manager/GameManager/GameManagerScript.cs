@@ -16,7 +16,6 @@ public class GameManagerScript : MonoBehaviour
      */
     public static GameManagerScript m_instance;
 
-
     [SerializeField]
     private NetworkView m_networkView;
 
@@ -61,8 +60,6 @@ public class GameManagerScript : MonoBehaviour
 
     public void pushAction(PlayerAction action)
     {
-        Debug.LogError("Push action " + action);
-
         int playerId = m_networkManager.getPlayerId(Network.player);
 
         if (playerId >= 0)
@@ -71,8 +68,21 @@ public class GameManagerScript : MonoBehaviour
             m_uiManager.appendAction(action);
         }
         else
-            Debug.LogError("Player id invalid");
+            Debug.Log("Player id invalid");
 
         m_uiManager.displayChooseAction(false);
+    }
+
+    public void removeAction(int index)
+    {
+        int playerId = m_networkManager.getPlayerId(Network.player);
+
+        if (playerId != -1)
+        {
+            m_playerManager.removeAction(playerId, index);
+            m_uiManager.RemoveAction(index);
+        }
+        else
+            Debug.Log("Player id invalid");
     }
 }

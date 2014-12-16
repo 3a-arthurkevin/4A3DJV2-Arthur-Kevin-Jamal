@@ -1,4 +1,11 @@
-﻿using UnityEngine;
+﻿/**
+ * @Author : Arthur TORRENTE
+ * @Date : 10/12/2014
+ * @Desc : Fonction ajoutant une action à la liste courante des actions du joueur
+ * @LastModifier : Arthur TORRENTE
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class AddActionScript : MonoBehaviour

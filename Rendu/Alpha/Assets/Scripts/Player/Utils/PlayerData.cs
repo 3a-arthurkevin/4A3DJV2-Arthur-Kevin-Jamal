@@ -1,4 +1,11 @@
-﻿using UnityEngine;
+﻿/**
+ * @Author : Arthur TORRENTE
+ * @Date : 10/12/2014
+ * @Desc : Description des informations d'un joueur
+ * @LastModifier : Arthur TORRENTE
+ */
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 

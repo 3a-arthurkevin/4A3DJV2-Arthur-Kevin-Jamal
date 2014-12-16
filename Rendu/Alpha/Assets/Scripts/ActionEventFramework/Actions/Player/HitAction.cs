@@ -1,4 +1,11 @@
-﻿using UnityEngine;
+﻿/**
+ * @Author : Arthur TORRENTE
+ * @Date : 10/12/2014
+ * @Desc : Action Appliquant des dégats à la cible
+ * @LastModifier : Arthur TORRENTE
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class HitAction : CustomActionScript
