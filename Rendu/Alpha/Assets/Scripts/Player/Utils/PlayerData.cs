@@ -18,6 +18,8 @@ public class PlayerData
         get { return m_playerId; }
         set { m_playerId = value; }
     }
+
+    [SerializeField]
     private Transform m_transform;
     public Transform Transform
     {
