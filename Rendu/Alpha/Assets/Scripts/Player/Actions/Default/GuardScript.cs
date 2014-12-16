@@ -9,6 +9,7 @@ public class GuardScript : MonoBehaviour
     void OnEnable()
     {
         StartCoroutine(Guard());
+        enabled = false;
     }
 
     IEnumerator Guard()
