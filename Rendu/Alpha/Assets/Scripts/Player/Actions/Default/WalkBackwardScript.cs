@@ -18,6 +18,7 @@ public class WalkBackwardScript : MonoBehaviour
     void OnEnable()
     {
         StartCoroutine(WalkBackward());
+        enabled = false;
     }
 
     IEnumerator WalkBackward()

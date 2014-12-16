@@ -12,6 +12,7 @@ GameObject:
   - 136: {fileID: 13600000}
   - 23: {fileID: 2300000}
   - 54: {fileID: 5400000}
+  - 114: {fileID: 11461060}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -537,7 +538,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a42f908d53f9de14b9cbab4d5d66d0d7, type: 3}
   m_Name: 
@@ -603,7 +604,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a42f908d53f9de14b9cbab4d5d66d0d7, type: 3}
   m_Name: 
@@ -621,7 +622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_playerAnimatorScript: {fileID: 11447456}
   m_playerTransform: {fileID: 400000}
-  m_distanceToJump: 2
+  m_distanceToJump: 1.75
   m_jumpVector: {x: 0, y: .0500000007, z: 0}
 --- !u!114 &11447440
 MonoBehaviour:
@@ -688,6 +689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef58c658423747c4baab84bfddef8a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_playerFootTriggerEvent: {fileID: 11400016}
   m_playerAnimatorScript: {fileID: 11447456}
 --- !u!114 &11447450
 MonoBehaviour:
@@ -700,6 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925cb79562c073540995c2ca7365f97f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_playerFootTriggerEvent: {fileID: 11400016}
   m_playerAnimatorScript: {fileID: 11447456}
 --- !u!114 &11447452
 MonoBehaviour:
@@ -712,6 +715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e078c04d6f8bf084c8f37a67201eb3db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_playerFistTriggerEvent: {fileID: 11400008}
   m_playerAnimatorScript: {fileID: 11447456}
 --- !u!114 &11447454
 MonoBehaviour:
@@ -724,6 +728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 999a3f2a43829f646876332e6fe0199a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_playerFistTriggerEvent: {fileID: 11400008}
   m_playerAnimatorScript: {fileID: 11447456}
 --- !u!114 &11447456
 MonoBehaviour:
@@ -737,6 +742,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playerAnimator: {fileID: 9500000}
+--- !u!114 &11461060
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e5a367c4cb2ae48b110d09fd51041f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_walkForwardScript: {fileID: 11447440}
+  m_walkBackWardScript: {fileID: 11447442}
+  m_jumpScript: {fileID: 11447438}
+  m_guardScript: {fileID: 11447444}
+  m_takeDamageScript: {fileID: 11447446}
+  m_highPunchScript: {fileID: 11447452}
+  m_lowPunchScript: {fileID: 11447454}
+  m_highKickScript: {fileID: 11447448}
+  m_lowKickScript: {fileID: 11447450}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

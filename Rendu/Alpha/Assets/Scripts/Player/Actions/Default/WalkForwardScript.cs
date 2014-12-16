@@ -18,6 +18,7 @@ public class WalkForwardScript : MonoBehaviour
     void OnEnable()
     {
         StartCoroutine(WalkForward());
+        enabled = false;
     }
 
     IEnumerator WalkForward()

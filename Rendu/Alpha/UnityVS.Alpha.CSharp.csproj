@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Manager\PlayerManager\PlayerManagerScript.cs" />
     <Compile Include="Assets\Scripts\Manager\UIManager\AddActionScript.cs" />
     <Compile Include="Assets\Scripts\Manager\UIManager\UIManagerScript.cs" />
+    <Compile Include="Assets\Scripts\Player\Actions\ActionsManager.cs" />
     <Compile Include="Assets\Scripts\Player\Actions\Default\GuardScript.cs" />
     <Compile Include="Assets\Scripts\Player\Actions\Default\JumpScript.cs" />
     <Compile Include="Assets\Scripts\Player\Actions\Default\TakeDamageScript.cs" />

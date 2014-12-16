@@ -18,6 +18,7 @@ public class JumpScript : MonoBehaviour
     void OnEnable()
     {
         StartCoroutine(Jump());
+        enabled = false;
     }
 
     IEnumerator Jump()

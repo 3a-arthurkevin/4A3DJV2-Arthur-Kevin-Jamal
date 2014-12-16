@@ -9,6 +9,7 @@ public class TakeDamageScript : MonoBehaviour
     void OnEnable()
     {
         StartCoroutine(TakeDamage());
+        enabled = false;
     }
 
     IEnumerator TakeDamage()
