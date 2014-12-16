@@ -17,23 +17,23 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: {x: .300000012, y: 0, z: 0}
-        inSlope: {x: 2.99999976, y: 4.5, z: 0}
-        outSlope: {x: 2.99999976, y: 4.5, z: 0}
-        tangentMode: 1
-      - time: .333333343
-        value: {x: 1.29999995, y: 1.5, z: 0}
-        inSlope: {x: .499999881, y: .749999881, z: 0}
-        outSlope: {x: .499999881, y: .749999881, z: 0}
+        value: {x: .300000012, y: .25, z: -.400000006}
+        inSlope: {x: 1.5, y: 3.44999981, z: 0}
+        outSlope: {x: 1.5, y: 3.44999981, z: 0}
         tangentMode: 0
-      - time: .833333313
-        value: {x: .300000012, y: 0, z: 0}
-        inSlope: {x: -2, y: -3.00000024, z: 0}
-        outSlope: {x: -2, y: -3.00000024, z: 0}
-        tangentMode: 6553665
+      - time: .333333343
+        value: {x: .800000012, y: 1.39999998, z: -.400000006}
+        inSlope: {x: .37499997, y: .862499893, z: 0}
+        outSlope: {x: .37499997, y: .862499893, z: 0}
+        tangentMode: 0
+      - time: 1
+        value: {x: .300000012, y: .25, z: -.400000006}
+        inSlope: {x: -.75000006, y: -1.72500002, z: 0}
+        outSlope: {x: -.75000006, y: -1.72500002, z: 0}
+        tangentMode: 146604068
       m_PreInfinity: 2
       m_PostInfinity: 2
-    path: PlayerLimbs/Foot
+    path: Foot
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves: []
@@ -44,7 +44,7 @@ AnimationClip:
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
     genericBindings:
-    - path: 3162124627
+    - path: 1774032557
       attribute: 1
       script: {fileID: 0}
       classID: 4
@@ -54,11 +54,11 @@ AnimationClip:
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: .833333313
+    m_StopTime: 1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -74,71 +74,71 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: .300000012
-        inSlope: 2.99999976
-        outSlope: 2.99999976
+        inSlope: 1.5
+        outSlope: 1.5
         tangentMode: 10
       - time: .333333343
-        value: 1.29999995
-        inSlope: .499999881
-        outSlope: .499999881
+        value: .800000012
+        inSlope: .37499997
+        outSlope: .37499997
         tangentMode: 10
-      - time: .833333313
+      - time: 1
         value: .300000012
-        inSlope: -2
-        outSlope: -2
+        inSlope: -.75000006
+        outSlope: -.75000006
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalPosition.x
-    path: PlayerLimbs/Foot
+    path: Foot
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0
-        inSlope: 4.5
-        outSlope: 4.5
+        value: .25
+        inSlope: 3.44999981
+        outSlope: 3.44999981
         tangentMode: 10
       - time: .333333343
-        value: 1.5
-        inSlope: .749999881
-        outSlope: .749999881
+        value: 1.39999998
+        inSlope: .862499893
+        outSlope: .862499893
         tangentMode: 10
-      - time: .833333313
-        value: 0
-        inSlope: -3.00000024
-        outSlope: -3.00000024
+      - time: 1
+        value: .25
+        inSlope: -1.72500002
+        outSlope: -1.72500002
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalPosition.y
-    path: PlayerLimbs/Foot
+    path: Foot
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0
+        value: -.400000006
         inSlope: 0
         outSlope: 0
         tangentMode: 10
       - time: .333333343
-        value: 0
+        value: -.400000006
         inSlope: 0
         outSlope: 0
         tangentMode: 10
-      - time: .833333313
-        value: 0
+      - time: 1
+        value: -.400000006
         inSlope: 0
         outSlope: 0
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalPosition.z
-    path: PlayerLimbs/Foot
+    path: Foot
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves: []

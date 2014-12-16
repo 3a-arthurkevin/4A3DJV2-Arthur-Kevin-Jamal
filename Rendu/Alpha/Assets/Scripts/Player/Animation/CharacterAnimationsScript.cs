@@ -15,10 +15,11 @@ public class CharacterAnimationsScript : MonoBehaviour {
 
     /*
      *      \\ Player Animation ActionId Value //
+     * 0    None
      * 1    WalkForward
      * 2    WalkBackward
-     * 3    Guard
-     * 4    Jump
+     * 3    Jump
+     * 4    Guard
      * 5    HighPunch
      * 6    LowPunch
      * 7    HighKick
@@ -28,6 +29,9 @@ public class CharacterAnimationsScript : MonoBehaviour {
 
     public void LunchAction(int value)
     {
+        //Changement du paramètre IdAction pour lancer l'animation demandée selon le paramètre
         m_playerAnimator.SetInteger("IdAction", value);
+        //Remettre le paramètre IdAction à la valeur par defaut
+        m_playerAnimator.SetInteger("IdAction", 0);
     }
 }
