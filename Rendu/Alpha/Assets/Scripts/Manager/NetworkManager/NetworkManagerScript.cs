@@ -20,6 +20,11 @@ public class NetworkManagerScript : MonoBehaviour
     private NetworkView m_networkView;
 
     [SerializeField]
+    private UnityEngine.UI.Text m_waitPlayerCountText;
+
+    private int m_prefifLevel;
+
+    [SerializeField]
     private bool m_buildServer;
     public bool BuildServer
     {
@@ -52,6 +57,7 @@ public class NetworkManagerScript : MonoBehaviour
     }
 
     /* Fait le matching playerID et NetworkPlayer */
+    [SerializeField]
     private List<NetworkPlayer> m_players;
     public List<NetworkPlayer> Players
     {
@@ -75,6 +81,8 @@ public class NetworkManagerScript : MonoBehaviour
             m_instance = this;
 
             m_players = new List<NetworkPlayer>();
+            m_prefifLevel = 0;
+
         }
         else if(m_instance != this)
         {
@@ -94,6 +102,8 @@ public class NetworkManagerScript : MonoBehaviour
             setupServer();
         else
             setupClient();
+
+        m_setup = true;
     }
 	
     void setupServer()
@@ -123,21 +133,39 @@ public class NetworkManagerScript : MonoBehaviour
         {
             if (m_players.Count < m_maxPlayer)
             {
-                Debug.Log("Player add" + player.ToString());
                 m_networkView.RPC("addPlayer", RPCMode.AllBuffered, player);
 
-                /*if (m_players.Count == m_maxPlayer - 1)
-                {
-                    Network.RemoveRPCsInGroup(0);
-                    Network.RemoveRPCsInGroup(1);
-                    m_networkView.RPC("RPCLoadLevel", RPCMode.AllBuffered, "Planification");
-                }*/
+                if (m_players.Count == m_maxPlayer)
+                    m_networkView.RPC("LoadLevel", RPCMode.AllBuffered, "Planification", m_prefifLevel++);
+
+                else
+                    m_networkView.RPC("SetWaitCount", RPCMode.AllBuffered, (m_maxPlayer - m_players.Count).ToString());
             }
         }
         else
         {
             Debug.Log("New Connection not Allow");
         }
+    }
+
+    [RPC]
+    void SetWaitCount(string waitPlayerCount)
+    {
+        m_waitPlayerCountText.text = waitPlayerCount;
+    }
+
+    [RPC]
+    void LoadLevel(string name, int levelPrefix)
+    {
+        Network.SetSendingEnabled(0, false);
+        Network.isMessageQueueRunning = false;
+
+        Network.SetLevelPrefix(levelPrefix);
+
+        Application.LoadLevel(name);
+
+        Network.isMessageQueueRunning = true;
+        Network.SetSendingEnabled(0, true);
     }
 
     [RPC]
