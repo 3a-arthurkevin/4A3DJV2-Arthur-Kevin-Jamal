@@ -66,6 +66,8 @@
      <Compile Include="Assets\Scripts\Manager\PlayerManager\PlayerManagerScript.cs" />
      <Compile Include="Assets\Scripts\Manager\UIManager\AddActionScript.cs" />
      <Compile Include="Assets\Scripts\Manager\UIManager\UIManagerScript.cs" />
+     <Compile Include="Assets\Scripts\Player\Actions\JumpScript.cs" />
+     <Compile Include="Assets\Scripts\Player\Actions\WalkBackwardScript.cs" />
      <Compile Include="Assets\Scripts\Player\Actions\WalkForwardScript.cs" />
      <Compile Include="Assets\Scripts\Player\Animation\CharacterAnimationsScript.cs" />
      <Compile Include="Assets\Scripts\Player\Utils\PlayerData.cs" />

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WalkForwardScript : MonoBehaviour 
+public class WalkBackwardScript : MonoBehaviour
 {
     [SerializeField]
     private Transform m_playerTransform;
@@ -14,17 +14,17 @@ public class WalkForwardScript : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(WalkForward());
+        StartCoroutine(WalkBackward());
     }
 
-    IEnumerator WalkForward()
+    IEnumerator WalkBackward()
     {
         float walkDistance = 0f;
         while (walkDistance < m_distanceToWalk)
         {
             walkDistance += m_stepVector.x;
 
-            m_playerTransform.Translate(m_stepVector);
+            m_playerTransform.Translate(-m_stepVector);
 
             yield return null;
         }
