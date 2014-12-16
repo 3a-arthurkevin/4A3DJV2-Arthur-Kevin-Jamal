@@ -80,7 +80,12 @@ public class UIManagerScript : MonoBehaviour
     void Start()
     {
         if (Network.isServer)
-            m_ui.SetActive(false);
+        {
+            if (m_ui == null)
+                Debug.LogError("UI not set");
+            else
+                m_ui.SetActive(false);
+        }
     }
 
     protected void mergeInstance()
@@ -168,7 +173,7 @@ public class UIManagerScript : MonoBehaviour
         }
     }
 
-    void setHealt(int player, int value)
+    public void setHealt(int player, int value)
     {
         if(player >= 0 && player <= 1)
         {

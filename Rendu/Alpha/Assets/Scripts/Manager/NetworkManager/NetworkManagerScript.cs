@@ -88,16 +88,13 @@ public class NetworkManagerScript : MonoBehaviour
         m_instance.Setup = m_setup;
     }
 
-	void Start ()
+	public void setupNetwork()
     {
-        if(m_setup)
-        {
-            if (m_buildServer)
-                setupServer();
-            else
-                setupClient();
-        }
-	}
+        if (m_buildServer)
+            setupServer();
+        else
+            setupClient();
+    }
 	
     void setupServer()
     {
@@ -164,5 +161,18 @@ public class NetworkManagerScript : MonoBehaviour
                 return i;
 
         return -1;
+    }
+
+    public void setPort(string port)
+    {
+        Debug.Log(port);
+        try
+        {
+            m_port = System.Int32.Parse(port);
+        }
+        catch(System.Exception)
+        {
+            m_port = 9000;
+        }
     }
 }

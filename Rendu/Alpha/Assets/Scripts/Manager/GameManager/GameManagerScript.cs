@@ -136,4 +136,9 @@ public class GameManagerScript : MonoBehaviour
         Network.isMessageQueueRunning = true;
         Network.SetSendingEnabled(0, true);
     }
+
+    public void playerDead(int player)
+    {
+        Debug.Log("Player : " + player + " are dead");
+    }
 }

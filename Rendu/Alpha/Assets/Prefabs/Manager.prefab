@@ -244,8 +244,12 @@ MonoBehaviour:
   m_networkView: {fileID: 14826408}
   m_playerOne:
     m_transform: {fileID: 0}
+    m_actionManager: {fileID: 0}
+    m_healManager: {fileID: 0}
   m_playerTwo:
     m_transform: {fileID: 0}
+    m_actionManager: {fileID: 0}
+    m_healManager: {fileID: 0}
   m_fightGame: 0
 --- !u!114 &11485156
 MonoBehaviour:

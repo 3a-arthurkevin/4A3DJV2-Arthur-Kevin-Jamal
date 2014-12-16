@@ -27,15 +27,16 @@ public class PlayerData
         set { m_transform = value; }
     }
 
-    private int m_health;
-    public int Health
+    [SerializeField]
+    private ActionsManager m_actionManager;
+    public ActionsManager ActionManager
     {
-        get { return m_health; }
-        set
-        {
-            m_health = Mathf.Clamp(value, 0, 100);
-        }
+        get { return m_actionManager; }
+        set { m_actionManager = value; }
     }
+
+    [SerializeField]
+    private HealtManager m_healManager;
 
     private List<PlayerAction> m_playerAction;
     public List<PlayerAction> PlayerAction
@@ -54,12 +55,14 @@ public class PlayerData
     {
         m_playerId = playerId;
         m_transform = transform;
-        m_health = health;
         m_isSync = false;
 
         if (playerAction == null)
             m_playerAction = new List<PlayerAction>();
         else
             m_playerAction = playerAction;
+
+        m_healManager.PlayerId = playerId;
+        m_healManager.CurLife = m_healManager.MaxLife;
     }
 }

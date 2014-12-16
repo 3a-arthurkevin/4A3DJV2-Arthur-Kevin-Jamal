@@ -16,7 +16,7 @@ public class HitAction : CustomActionScript
     private PlayerManagerScript m_playerManager;
     */
     [SerializeField]
-    private PlayerData m_enemyPlayerData;
+    private HealtManager m_enemyPlayerData;
 
     [SerializeField]
     private int m_damage;
@@ -25,7 +25,7 @@ public class HitAction : CustomActionScript
     {
         //Faire la verif si l'enemy a mis sa guard ici ?? ou avant ???
         //C'est pas le au niveau du gameManager que c'est gérer ? (enlever pts vie / modifier GUI health .... ) ???
-        m_enemyPlayerData.Health -= m_damage;
+        m_enemyPlayerData.CurLife -= m_damage;
 
         return null;    
     }
