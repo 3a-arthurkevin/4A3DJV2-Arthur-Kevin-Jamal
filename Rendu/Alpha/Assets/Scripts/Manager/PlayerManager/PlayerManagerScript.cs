@@ -27,6 +27,12 @@ public class PlayerManagerScript : MonoBehaviour
     [SerializeField]
     private bool m_fightGame;
 
+    [SerializeField]
+    private ActionsManager m_playerOneActionManager;
+
+    [SerializeField]
+    private ActionsManager m_playerTwoActionManager;
+
     void Awake()
     {
         if(m_instance == null)
@@ -169,15 +175,19 @@ public class PlayerManagerScript : MonoBehaviour
 
     private void fightGame()
     {
-        Debug.LogError("Player1");
+        //Debug.LogError("Player1");
 
         foreach (PlayerAction pAction in m_playerOne.PlayerAction)
-            Debug.LogError(pAction.ToString());
+        {
+            m_playerOneActionManager.lunchAction(pAction);
+        }
 
-        Debug.LogError("Player2");
+        //Debug.LogError("Player2");
 
         foreach (PlayerAction pAction in m_playerTwo.PlayerAction)
-            Debug.LogError(pAction.ToString());
+        {
+            m_playerTwoActionManager.lunchAction(pAction);
+        }
     }
    
 }

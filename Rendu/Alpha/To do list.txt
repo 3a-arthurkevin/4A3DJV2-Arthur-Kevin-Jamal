@@ -1,0 +1,31 @@
+To Do List
+
+1.1 > Feature
+	Faire un mode Versus IA en local
+
+1.2 > Outils
+	Faire un script permettant de regarder l'inspector de tous les GameObjects d'une Scene et de signaler tout les SerializedField non Set.
+
+1.3 > Finir le lobby
+	
+1.4 > Gérer la déconnexion reconnexion
+
+1.5 > Ajouter le système de pause
+	
+	
+
+	
+2.1 > Mettre un état de Guard à prendre en compte lors qu'un des deux joueurs se met en guard et que l'autre le tape pour ne pas recevoir de dégats
+
+2.2 > Mettre un état debout ou baisser ?
+	
+2.3 > Ajouter un système d'attaque spécial/combinaison d'actions ?
+	
+	
+	
+	
+3.1 > Mettre des assets sons lors des actions joueurs
+	
+3.2 > Améliorer la synchronisation des animations
+
+3.3 > Ajouter des assets graphiques pour rentre le jeu un peu plus joli
