@@ -397,7 +397,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9d2b4c2131ae4e4da6370b02b6e5907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_events: []
+  m_events:
+  - {fileID: 11400008}
   m_maxTriggerCount: 2147483647
   m_triggeredCount: 0
   m_delay: 0
@@ -409,7 +410,6 @@ MonoBehaviour:
   m_repeatTimeBounded: 0
   m_repeatTime: 0
   m_registerTime: 0
-  m_playerManager: {fileID: 0}
   m_damage: 20
 --- !u!114 &11400002
 MonoBehaviour:
@@ -422,7 +422,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9d2b4c2131ae4e4da6370b02b6e5907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_events: []
+  m_events:
+  - {fileID: 11400008}
   m_maxTriggerCount: 2147483647
   m_triggeredCount: 0
   m_delay: 0
@@ -434,7 +435,6 @@ MonoBehaviour:
   m_repeatTimeBounded: 0
   m_repeatTime: 0
   m_registerTime: 0
-  m_playerManager: {fileID: 0}
   m_damage: 10
 --- !u!114 &11400004
 MonoBehaviour:
@@ -460,7 +460,6 @@ MonoBehaviour:
   m_repeatTimeBounded: 0
   m_repeatTime: 0
   m_registerTime: 0
-  m_playerManager: {fileID: 0}
   m_damage: 30
 --- !u!114 &11400006
 MonoBehaviour:
@@ -486,7 +485,6 @@ MonoBehaviour:
   m_repeatTimeBounded: 0
   m_repeatTime: 0
   m_registerTime: 0
-  m_playerManager: {fileID: 0}
   m_damage: 20
 --- !u!114 &11400008
 MonoBehaviour:
