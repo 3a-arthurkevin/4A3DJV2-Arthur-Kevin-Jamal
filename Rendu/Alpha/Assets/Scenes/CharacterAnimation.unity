@@ -1641,7 +1641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_playerTransform: {fileID: 956555203}
   m_distanceToJump: 2
-  m_jumpVector: {x: 0, y: .100000001, z: 0}
+  m_jumpVector: {x: 0, y: .0500000007, z: 0}
 --- !u!1 &696074047
 GameObject:
   m_ObjectHideFlags: 0

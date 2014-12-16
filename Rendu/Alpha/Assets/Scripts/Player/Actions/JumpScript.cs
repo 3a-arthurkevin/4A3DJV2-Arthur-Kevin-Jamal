@@ -12,13 +12,16 @@ public class JumpScript : MonoBehaviour
     [SerializeField]
     private Vector3 m_jumpVector;
 
-    void Start()
+    void OnEnable()
     {
+        Debug.Log("Enter Start!!!");
         StartCoroutine(Jump());
+        Debug.Log("Exit Start!!!");
     }
 
     IEnumerator Jump()
     {
+        Debug.Log("Action !!!");
         float jumpDistance = 0f;
         while (jumpDistance < m_distanceToJump)
         {
@@ -31,9 +34,9 @@ public class JumpScript : MonoBehaviour
 
         while (jumpDistance > 0)
         {
-            jumpDistance -= m_jumpVector.y;
+            jumpDistance -= (m_jumpVector.y/2);
 
-            m_playerTransform.Translate(-m_jumpVector);
+            m_playerTransform.Translate(-m_jumpVector/2);
 
             yield return null;
         }
