@@ -85,4 +85,25 @@ public class GameManagerScript : MonoBehaviour
         else
             Debug.Log("Player id invalid");
     }
+
+    public void commitPlayerAction()
+    {
+        int playerId = m_networkManager.getPlayerId(Network.player);
+
+        if (playerId >= 0)
+            m_playerManager.synchronisePlayerActionWithServer(playerId);
+
+        else
+            Debug.LogError("Player not found");
+    }
+
+    public void startSimulation()
+    {
+
+    }
+
+    public void allPlayerSync()
+    {
+
+    }
 }

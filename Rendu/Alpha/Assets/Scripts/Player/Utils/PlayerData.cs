@@ -43,11 +43,19 @@ public class PlayerData
         get { return m_playerAction; }
     }
 
+    private bool m_isSync;
+    public bool IsSync
+    {
+        get { return m_isSync; }
+        set { m_isSync = value; }
+    }
+
     public PlayerData(int playerId, Transform transform = null, int health = 100, List<PlayerAction> playerAction = null)
     {
         m_playerId = playerId;
         m_transform = transform;
         m_health = health;
+        m_isSync = false;
 
         if (playerAction == null)
             m_playerAction = new List<PlayerAction>();

@@ -13,6 +13,12 @@ public class PlayerManagerScript : MonoBehaviour
     public static PlayerManagerScript m_instance;
 
     [SerializeField]
+    private GameManagerScript m_gameManager;
+
+    [SerializeField]
+    private NetworkView m_networkView;
+
+    [SerializeField]
     private PlayerData m_playerOne;
 
     [SerializeField]
@@ -72,5 +78,71 @@ public class PlayerManagerScript : MonoBehaviour
         }
         else
             Debug.Log("Invalid Index");
+    }
+
+    public void synchronisePlayerActionWithServer(int playerId)
+    {
+        PlayerData player = playerId == m_playerOne.PlayerId ? m_playerOne : m_playerTwo;
+
+        int[] playerAction = new int[player.PlayerAction.Count];
+
+        for (int i = 0; i < player.PlayerAction.Count; ++i)
+            playerAction[i] = (int)player.PlayerAction[i];
+
+        m_networkView.RPC("sendPlayerAction", RPCMode.Server, Network.player, playerId, playerAction);
+    }
+
+    [RPC]
+    private void sendPlayerAction(NetworkPlayer player, int playerId, int[] playerAction)
+    {
+        if(Network.isServer)
+        {
+            bool synValid = false;
+
+            if (playerAction.Length > Constants.MAXSIZEPLAYERACTION)
+                Debug.LogError("To many action into playerAction tab");
+            else
+            {
+                PlayerData playerData = null;
+
+                if (playerId == m_playerOne.PlayerId)
+                    playerData = m_playerOne;
+                
+                else if (playerId == m_playerTwo.PlayerId)
+                    playerData = m_playerTwo;
+
+                if(playerData == null)
+                    Debug.LogError("Unknow player");
+                else
+                {
+                    foreach(int playerActionInteger in playerAction)
+                        playerData.PlayerAction.Add((PlayerAction)playerActionInteger);
+
+                    playerData.IsSync = true;
+
+                    if (m_playerOne.IsSync && m_playerTwo.IsSync)
+                        m_gameManager.allPlayerSync();
+                }
+
+            }
+
+            m_networkView.RPC("syncIsValid", player, synValid);
+        }
+    }
+
+    [RPC]
+    private void syncIsValid(bool syncValide)
+    {
+        if(Network.isClient)
+        {
+            if(syncValide)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
     }
 }
