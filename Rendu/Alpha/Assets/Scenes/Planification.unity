@@ -397,6 +397,26 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 158812548}
+    - target: {fileID: 11400120, guid: a169dc612a3c20a479e7792741c52ba5, type: 2}
+      propertyPath: m_action
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400024, guid: a169dc612a3c20a479e7792741c52ba5, type: 2}
+      propertyPath: m_action
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400108, guid: a169dc612a3c20a479e7792741c52ba5, type: 2}
+      propertyPath: m_action
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400060, guid: a169dc612a3c20a479e7792741c52ba5, type: 2}
+      propertyPath: m_action
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400070, guid: a169dc612a3c20a479e7792741c52ba5, type: 2}
+      propertyPath: m_action
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a169dc612a3c20a479e7792741c52ba5, type: 2}
   m_RootGameObject: {fileID: 2032852134}
@@ -808,7 +828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_manager: {fileID: 2116138356}
-  m_action: 4
+  m_action: 5
 --- !u!1 &422225908
 GameObject:
   m_ObjectHideFlags: 0
@@ -2417,7 +2437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_manager: {fileID: 2116138356}
-  m_action: 6
+  m_action: 7
 --- !u!114 &1033559594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2783,7 +2803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_manager: {fileID: 2116138356}
-  m_action: 8
+  m_action: 4
 --- !u!114 &1201235382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4191,7 +4211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_manager: {fileID: 2116138356}
-  m_action: 7
+  m_action: 8
 --- !u!1 &1736916240
 GameObject:
   m_ObjectHideFlags: 0
@@ -4459,7 +4479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_manager: {fileID: 2116138356}
-  m_action: 5
+  m_action: 6
 --- !u!1 &1788938244
 GameObject:
   m_ObjectHideFlags: 0
@@ -4533,6 +4553,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1824354506}
+  - 95: {fileID: 1824354508}
+  - 114: {fileID: 1824354507}
   m_Layer: 0
   m_Name: PlayerLimbs
   m_TagString: Untagged
@@ -4556,6 +4578,35 @@ Transform:
   - {fileID: 1841464537}
   m_Father: {fileID: 956555203}
   m_RootOrder: 1
+--- !u!114 &1824354507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400018, guid: 75ff69dde1bc7ba428bf5faacff8369f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1071604370}
+  m_GameObject: {fileID: 1824354505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00098ab6150e4f94e899b24785eb6511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_playerAnimator: {fileID: 0}
+--- !u!95 &1824354508
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 9500000, guid: 75ff69dde1bc7ba428bf5faacff8369f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1071604370}
+  m_GameObject: {fileID: 1824354505}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f45aa6bc30d17ff40865fb0fa2fde30c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1841464536
 GameObject:
   m_ObjectHideFlags: 0
