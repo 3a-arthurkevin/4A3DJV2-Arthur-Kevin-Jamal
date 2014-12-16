@@ -1,5 +1,6 @@
-- Si besoin d'un effet de vitesse dans les dÈplacements, coup, ... utiliser un Trail Renderer
-- Voir l'utilisation des Physics matÈrials
+- Si besoin d'un effet de vitesse dans les d√©placements, coup, ... utiliser un Trail Renderer
+- Voir l'utilisation des Physics mat√©rials
 - Utilisation des LigthMap pour les effets visuel du niveaux
 - Voir le tuto openclassroom de vidal sur les effets visuel
 - Utilisation des normalMap dans le shader BumpedDiffuse
+- Site web de pr√©sentation du jeu : http://mad-hatter.fr/Assets/PostInputFighter/
