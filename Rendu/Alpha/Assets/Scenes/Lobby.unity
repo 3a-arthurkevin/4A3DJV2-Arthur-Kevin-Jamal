@@ -2059,6 +2059,8 @@ MonoBehaviour:
     m_actionManager: {fileID: 0}
     m_healManager: {fileID: 0}
   m_fightGame: 0
+  m_playerOneActionManager: {fileID: 0}
+  m_playerTwoActionManager: {fileID: 0}
 --- !u!148 &1851899027
 NetworkView:
   m_ObjectHideFlags: 0

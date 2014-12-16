@@ -62,7 +62,7 @@ public class PlayerData
         else
             m_playerAction = playerAction;
 
-        m_healManager.PlayerId = playerId;
+        //m_healManager.PlayerId = playerId;
         m_healManager.CurLife = m_healManager.MaxLife;
     }
 }
