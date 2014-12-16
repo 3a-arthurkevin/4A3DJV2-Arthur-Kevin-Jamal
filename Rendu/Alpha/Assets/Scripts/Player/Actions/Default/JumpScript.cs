@@ -4,6 +4,9 @@ using System.Collections;
 public class JumpScript : MonoBehaviour 
 {
     [SerializeField]
+    private CharacterAnimationsScript m_playerAnimatorScript;
+
+    [SerializeField]
     private Transform m_playerTransform;
 
     [SerializeField]
@@ -14,15 +17,15 @@ public class JumpScript : MonoBehaviour
 
     void OnEnable()
     {
-        Debug.Log("Enter Start!!!");
         StartCoroutine(Jump());
-        Debug.Log("Exit Start!!!");
     }
 
     IEnumerator Jump()
     {
-        Debug.Log("Action !!!");
         float jumpDistance = 0f;
+
+        m_playerAnimatorScript.LunchAction((int)PlayerAction.Jump);
+
         while (jumpDistance < m_distanceToJump)
         {
             jumpDistance += m_jumpVector.y;
@@ -34,11 +37,13 @@ public class JumpScript : MonoBehaviour
 
         while (jumpDistance > 0)
         {
-            jumpDistance -= (m_jumpVector.y/2);
+            jumpDistance -= m_jumpVector.y;
 
-            m_playerTransform.Translate(-m_jumpVector/2);
+            m_playerTransform.Translate(-m_jumpVector);
 
             yield return null;
         }
+
+        m_playerAnimatorScript.LunchAction((int)PlayerAction.None);
     }
 }

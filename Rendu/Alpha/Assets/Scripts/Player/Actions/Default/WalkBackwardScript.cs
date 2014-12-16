@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WalkForwardScript : MonoBehaviour 
+public class WalkBackwardScript : MonoBehaviour
 {
+    [SerializeField]
+    private CharacterAnimationsScript m_playerAnimatorScript;
+
     [SerializeField]
     private Transform m_playerTransform;
 
@@ -12,21 +15,26 @@ public class WalkForwardScript : MonoBehaviour
     [SerializeField]
     private Vector3 m_stepVector;
 
-    void Start()
+    void OnEnable()
     {
-        StartCoroutine(WalkForward());
+        StartCoroutine(WalkBackward());
     }
 
-    IEnumerator WalkForward()
+    IEnumerator WalkBackward()
     {
         float walkDistance = 0f;
+
+        m_playerAnimatorScript.LunchAction((int)PlayerAction.MoveBackWard);
+
         while (walkDistance < m_distanceToWalk)
         {
             walkDistance += m_stepVector.x;
 
-            m_playerTransform.Translate(m_stepVector);
+            m_playerTransform.Translate(-m_stepVector);
 
             yield return null;
         }
+
+        m_playerAnimatorScript.LunchAction((int)PlayerAction.None);
     }
 }
