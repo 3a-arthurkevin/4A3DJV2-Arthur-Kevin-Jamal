@@ -57,6 +57,11 @@ public class UIManagerScript : MonoBehaviour
     [SerializeField]
     private Slider[] m_healtBar;
 
+    [SerializeField]
+    private Button[] m_disableButtonOnCommit;
+
+    [SerializeField]
+    private GameObject m_waitCommitPannel;
 
     void Awake()
     {
@@ -174,5 +179,24 @@ public class UIManagerScript : MonoBehaviour
     public void displayChooseAction(bool display)
     {
         m_playerChooseAction.SetActive(display);
+    }
+
+    public void resetPlayerAction()
+    {
+        for(int i = 0; i < m_currentActionNumber; ++i)
+        {
+            m_playerActionsImages[i].enabled = false;
+            m_playerActionButton[i].enabled = false;
+        }
+
+        m_currentActionNumber = 0;
+    }
+
+    public void playerHasCommit()
+    {
+        foreach (Button button in m_disableButtonOnCommit)
+            button.interactable = false;
+
+        m_waitCommitPannel.SetActive(true);
     }
 }

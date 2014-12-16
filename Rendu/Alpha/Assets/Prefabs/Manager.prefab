@@ -41,6 +41,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400004}
+  - 114: {fileID: 11485156}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -200,6 +201,16 @@ MonoBehaviour:
   m_healtBar:
   - {fileID: 0}
   - {fileID: 0}
+  m_disableButtonOnCommit:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_waitCommitPannel: {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -213,7 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gameManager: {fileID: 11400000}
   m_networkView: {fileID: 14800002}
-  m_buildServer: 0
+  m_buildServer: 1
   m_ip: 192.168.0.19
   m_port: 9000
   m_maxPlayer: 2
@@ -235,6 +246,18 @@ MonoBehaviour:
     m_transform: {fileID: 0}
   m_playerTwo:
     m_transform: {fileID: 0}
+  m_fightGame: 0
+--- !u!114 &11485156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c1a71acf35aee498db7fa85812d671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!148 &14800000
 NetworkView:
   m_ObjectHideFlags: 1

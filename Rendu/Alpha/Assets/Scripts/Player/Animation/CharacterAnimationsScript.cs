@@ -30,8 +30,6 @@ public class CharacterAnimationsScript : MonoBehaviour {
     public void LunchAction(int value)
     {
         //Changement du paramètre IdAction pour lancer l'animation demandée selon le paramètre
-        m_playerAnimator.SetInteger("IdAction", value);
-        //Remettre le paramètre IdAction à la valeur par defaut
-        m_playerAnimator.SetInteger("IdAction", 0);
+        m_playerAnimator.SetInteger("ActionId", value);
     }
 }

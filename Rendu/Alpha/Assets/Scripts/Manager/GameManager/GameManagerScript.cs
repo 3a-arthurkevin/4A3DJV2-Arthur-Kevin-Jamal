@@ -28,6 +28,8 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField]
     private NetworkManagerScript m_networkManager;
 
+    private int m_levelPrefix;
+
     /**
      * Check Global instance is same instance of this
      */
@@ -37,6 +39,7 @@ public class GameManagerScript : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
             m_instance = this;
+            m_levelPrefix = 0;
         }
         else if (m_instance != this)
         {
@@ -97,6 +100,19 @@ public class GameManagerScript : MonoBehaviour
             Debug.LogError("Player not found");
     }
 
+    public void syncFinish(bool syncFailed)
+    {
+        if(syncFailed)
+        {
+            m_uiManager.resetPlayerAction();
+            m_playerManager.resetPlayerAction(m_networkManager.getPlayerId(Network.player));
+        }
+        else
+        {
+            m_uiManager.playerHasCommit();
+        }
+    }
+
     public void startSimulation()
     {
 
@@ -104,6 +120,20 @@ public class GameManagerScript : MonoBehaviour
 
     public void allPlayerSync()
     {
+        m_networkView.RPC("LoadLevel", RPCMode.AllBuffered, "Figthing", m_levelPrefix++);
+    }
 
+    [RPC]
+    void LoadLevel(string levelName, int levelPrefix)
+    {
+        Network.SetSendingEnabled(0, false);
+        Network.isMessageQueueRunning = false;
+
+        Network.SetLevelPrefix(levelPrefix);
+
+        Application.LoadLevel(levelName);
+
+        Network.isMessageQueueRunning = true;
+        Network.SetSendingEnabled(0, true);
     }
 }
