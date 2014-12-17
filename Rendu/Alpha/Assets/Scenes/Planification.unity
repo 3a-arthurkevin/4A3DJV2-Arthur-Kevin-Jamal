@@ -3430,6 +3430,8 @@ MonoBehaviour:
     m_actionManager: {fileID: 973369811}
     m_healManager: {fileID: 973369816}
   m_fightGame: 0
+  m_playerOneActionManager: {fileID: 0}
+  m_playerTwoActionManager: {fileID: 0}
 --- !u!148 &1313676936
 NetworkView:
   m_ObjectHideFlags: 0
@@ -3897,11 +3899,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gameManager: {fileID: 2116138356}
   m_networkView: {fileID: 1382165106}
+  m_waitPlayerCountText: {fileID: 0}
   m_buildServer: 1
-  m_ip: 192.168.0.19
+  m_ip: 127.0.0.1
   m_port: 9000
   m_maxPlayer: 2
-  m_setup: 1
+  m_setup: 0
 --- !u!1 &1391428766
 GameObject:
   m_ObjectHideFlags: 0
@@ -6730,6 +6733,10 @@ Prefab:
     - target: {fileID: 14800000, guid: babc264d26215ef408692c61d07f1046, type: 2}
       propertyPath: m_ViewID.m_Type
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: babc264d26215ef408692c61d07f1046, type: 2}
+      propertyPath: m_ip
+      value: 127.0.0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: babc264d26215ef408692c61d07f1046, type: 2}

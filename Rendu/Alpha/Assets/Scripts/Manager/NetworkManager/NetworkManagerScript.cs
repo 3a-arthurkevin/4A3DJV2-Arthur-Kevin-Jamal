@@ -72,6 +72,11 @@ public class NetworkManagerScript : MonoBehaviour
         set { m_setup = value; }
     }
 
+    void Start()
+    {
+        if (m_setup)
+            setupNetwork();
+    }
 
     void Awake()
     {
@@ -151,7 +156,8 @@ public class NetworkManagerScript : MonoBehaviour
     [RPC]
     void SetWaitCount(string waitPlayerCount)
     {
-        m_waitPlayerCountText.text = waitPlayerCount;
+        if(m_waitPlayerCountText != null)
+            m_waitPlayerCountText.text = waitPlayerCount;
     }
 
     [RPC]
