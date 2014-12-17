@@ -6,9 +6,7 @@ To Do List
 1.2 > Outils
 	Faire un script permettant de regarder l'inspector de tous les GameObjects d'une Scene et de signaler tout les SerializedField non Set.
 	
-1.3 > Gérer l'attente de connexion d'un autre joueur
-	
-1.4 > Gérer la déconnexion reconnexion
+1.3 > Gérer la déconnexion reconnexion
 
 1.5 > Ajouter le système de pause
 	
