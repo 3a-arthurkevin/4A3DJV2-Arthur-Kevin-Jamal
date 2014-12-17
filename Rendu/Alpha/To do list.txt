@@ -15,9 +15,9 @@ To Do List
 	
 2.1 > Mettre un état de Guard à prendre en compte lors qu'un des deux joueurs se met en guard et que l'autre le tape pour ne pas recevoir de dégats
 
-2.2 > Mettre un état debout ou baisser ?
-	
-2.3 > Ajouter un système d'attaque spécial/combinaison d'actions ?
+2.3 > Ajouter un système d'attaque spécial/combinaison d'actions !!!
+
+2.3 > Mettre un état debout ou baisser ?
 	
 	
 	
