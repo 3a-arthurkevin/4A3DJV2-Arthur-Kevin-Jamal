@@ -225,8 +225,8 @@ MonoBehaviour:
   m_gameManager: {fileID: 11400000}
   m_networkView: {fileID: 14800002}
   m_waitPlayerCountText: {fileID: 0}
-  m_buildServer: 1
-  m_ip: 192.168.0.19
+  m_buildServer: 0
+  m_ip: 127.0.0.1
   m_port: 9000
   m_maxPlayer: 2
   m_setup: 0

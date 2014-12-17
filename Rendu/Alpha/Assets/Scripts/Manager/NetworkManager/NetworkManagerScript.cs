@@ -156,8 +156,7 @@ public class NetworkManagerScript : MonoBehaviour
     [RPC]
     void SetWaitCount(string waitPlayerCount)
     {
-        if(m_waitPlayerCountText != null)
-            m_waitPlayerCountText.text = waitPlayerCount;
+        m_waitPlayerCountText.text = waitPlayerCount;
     }
 
     [RPC]

@@ -77,17 +77,6 @@ public class UIManagerScript : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        if (Network.isServer)
-        {
-            if (m_ui == null)
-                Debug.LogError("UI not set");
-            else
-                m_ui.SetActive(false);
-        }
-    }
-
     protected void mergeInstance()
     {
     }
