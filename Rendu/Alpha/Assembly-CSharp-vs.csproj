@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\ActionEventFramework\AbstractClasses\CustomEventScript.cs" />
      <Compile Include="Assets\Scripts\ActionEventFramework\Actions\CommitPlayerAction.cs" />
      <Compile Include="Assets\Scripts\ActionEventFramework\Actions\LoadLevelAction.cs" />
+     <Compile Include="Assets\Scripts\ActionEventFramework\Actions\NetworkSetupAction.cs" />
      <Compile Include="Assets\Scripts\ActionEventFramework\Actions\Player\HitAction.cs" />
      <Compile Include="Assets\Scripts\ActionEventFramework\Actions\SetActiveScriptAction.cs" />
      <Compile Include="Assets\Scripts\ActionEventFramework\Actions\SetEnableScriptAction.cs" />
@@ -80,6 +81,7 @@
      <Compile Include="Assets\Scripts\Player\Actions\Punchs\HighPunchScript.cs" />
      <Compile Include="Assets\Scripts\Player\Actions\Punchs\LowPunchScript.cs" />
      <Compile Include="Assets\Scripts\Player\Animation\CharacterAnimationsScript.cs" />
+     <Compile Include="Assets\Scripts\Player\Utils\HealtManager.cs" />
      <Compile Include="Assets\Scripts\Player\Utils\PlayerData.cs" />
      <Compile Include="Assets\Scripts\UI\ActionList\RemoveActionScript.cs" />
      <Compile Include="Assets\Scripts\Utils\Constants.cs" />
