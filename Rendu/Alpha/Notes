@@ -1,0 +1,6 @@
+* Garder dans les singleton seulement les variables global à toute les scènes
+* Supprimer le Dont Destroy sur tous les GO sauf le root
+* Faire des ManagerForSceneN pour coder le comportement du Manager dans la scène N
+* Dans les managers accéder au container static
+* Ne déclarer le GameObject Manager qui contient tous les container globaux dans la scène Lobby
+* Mettre Bestfit sur les texte qui doivent être bien visible, Bestfit prend la taille maximal dans le GameObject parent

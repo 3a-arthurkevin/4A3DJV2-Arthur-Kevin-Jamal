@@ -11,7 +11,7 @@ using System.Collections;
 public class PlayerManagerScript : MonoBehaviour
 {
     public static PlayerManagerScript m_instance;
-
+    
     [SerializeField]
     private GameManagerScript m_gameManager;
 
@@ -49,8 +49,16 @@ public class PlayerManagerScript : MonoBehaviour
 
     protected void mergeInstace()
     {
+        m_instance.m_playerOneActionManager = m_playerOneActionManager;
+        m_instance.m_playerTwoActionManager = m_playerTwoActionManager;
+
         m_instance.m_playerOne.Transform = m_playerOne.Transform;
+        m_instance.m_playerOne.ActionManager = m_playerOne.ActionManager;
+        m_instance.m_playerOne.HealthManager = m_playerOne.HealthManager;
+
         m_instance.m_playerTwo.Transform = m_playerTwo.Transform;
+        m_instance.m_playerTwo.ActionManager = m_playerTwo.ActionManager;
+        m_instance.m_playerTwo.HealthManager = m_playerTwo.HealthManager;
 
         if(Network.isServer)
             if (m_fightGame)

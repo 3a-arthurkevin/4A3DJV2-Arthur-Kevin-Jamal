@@ -119,7 +119,7 @@ MonoBehaviour:
   m_gameManager: {fileID: 415362654}
   m_networkView: {fileID: 38664750}
   m_waitPlayerCountText: {fileID: 1917585207}
-  m_buildServer: 0
+  m_buildServer: 1
   m_ip: 127.0.0.1
   m_port: 9000
   m_maxPlayer: 2
@@ -1507,6 +1507,10 @@ Prefab:
       propertyPath: m_ui
       value: 
       objectReference: {fileID: 1486798046}
+    - target: {fileID: 11400004, guid: babc264d26215ef408692c61d07f1046, type: 2}
+      propertyPath: m_buildServer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: babc264d26215ef408692c61d07f1046, type: 2}
   m_RootGameObject: {fileID: 938315554}

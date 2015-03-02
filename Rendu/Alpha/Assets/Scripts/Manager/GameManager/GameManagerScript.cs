@@ -54,6 +54,7 @@ public class GameManagerScript : MonoBehaviour
      */
     protected void mergeInstance()
     {
+        
     }
 
     public void newPlayer(int playerId)

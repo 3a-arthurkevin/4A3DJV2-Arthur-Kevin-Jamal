@@ -37,6 +37,11 @@ public class PlayerData
 
     [SerializeField]
     private HealtManager m_healManager;
+    public HealtManager HealthManager
+    {
+        get { return m_healManager; }
+        set { m_healManager = value; }
+    }
 
     private List<PlayerAction> m_playerAction;
     public List<PlayerAction> PlayerAction
