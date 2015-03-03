@@ -40,6 +40,8 @@ public class GameUIManager : MonoBehaviour
     //Delegate can addAction event
     public GameDelegateDefinition.PushAction m_pushAction;
     public GameDelegateDefinition.RemoveAction m_removeAction;
+    public GameDelegateDefinition.CommitPlayerAction m_commitPlayerAction;
+    public GameDelegateDefinition.LaunchSimulation m_launchSimulation;
 
     void Start()
     {
@@ -144,5 +146,20 @@ public class GameUIManager : MonoBehaviour
     public void hideChoose()
     {
         m_chooseAction.SetActive(false);
+    }
+
+    public void commitPlayerAction()
+    {
+        m_commitPlayerAction();
+    }
+
+    public void commitSuccess()
+    {
+        Debug.Log("Commit success");
+    }
+
+    public void launchSimulation()
+    {
+        m_launchSimulation();
     }
 }

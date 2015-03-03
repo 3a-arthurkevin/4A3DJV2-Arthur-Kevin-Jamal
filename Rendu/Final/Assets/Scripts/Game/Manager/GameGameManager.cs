@@ -12,8 +12,22 @@ public class GameGameManager : MonoBehaviour
     [SerializeField]
     private GamePlayerManager m_playerManager;
 
+
+    public void commitPlayerAction()
+    {
+        Debug.Log("Commit player action");
+    }
+
+    public void launchSimulation()
+    {
+        Debug.Log("Launch simu");
+    }
+
     void Start()
     {
+        m_uiManager.m_commitPlayerAction = commitPlayerAction;
+        m_uiManager.m_launchSimulation = launchSimulation;
+
         m_uiManager.m_pushAction = m_playerManager.pushAction;
         m_uiManager.m_removeAction = m_playerManager.removeAction;
     }
