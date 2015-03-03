@@ -35,7 +35,6 @@ public class LobbyNetworkManager : MonoBehaviour
     }
     public void setPort(string port)
     {
-        Debug.Log(port);
         try
         {
             m_port = System.Int32.Parse(port);
@@ -60,14 +59,11 @@ public class LobbyNetworkManager : MonoBehaviour
         get { return m_setup; }
     }
 
-    /* Delegation declaration */
     //Event on Network setup
-    public delegate void NetworkIsSetup();
-    public NetworkIsSetup networkIsSetup;
+    public LobbyDelegateDefinition.NetworkIsSetup networkIsSetup;
 
     //Event on new player connect
-    public delegate void NewPlayerConnected();
-    public NewPlayerConnected newPlayerConnected;
+    public LobbyDelegateDefinition.NewPlayerConnected newPlayerConnected;
 
     /* ********************************** */
 
@@ -133,6 +129,7 @@ public class LobbyNetworkManager : MonoBehaviour
     [RPC]
     void LoadGameLevel(int levelPrefix)
     {
+        Debug.LogError("LoadGameLevel");
         Network.SetSendingEnabled(0, false);
         Network.isMessageQueueRunning = false;
 
