@@ -4,13 +4,13 @@ using System.Collections;
 public enum PlayerAction
 {
     None,           //0
-    MoveForward,    //1
-    MoveBackWard,   //2
-    Jump,           //3
-    Guard,          //4
+    Guard,          //1
+    MoveForward,    //2
+    MoveBackWard,   //3
+    LowPunch,       //4
     HighPunch,      //5
-    LowPunch,       //6
-    HighKick,       //7
-    LowKick,        //8
-    TakeDamage      //9
+    HighKick,       //6
+    LowKick,        //7
+    TakeDamage,     //8
+    Jump,           //9 N'existe pas dans ce jeu
 }

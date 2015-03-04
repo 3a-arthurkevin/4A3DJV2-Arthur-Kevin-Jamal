@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 8b9311ac5c29dc74a82b549cfade153d
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - m_noMove: {fileID: 7400000, guid: 72afe8220c45d80498996cf6ca3eb0c3, type: 2}
+  - m_Guard: {fileID: 7400000, guid: 68ad43930f991364aa3a29ec90ca9f01, type: 2}
+  - m_WalkForward: {fileID: 7400000, guid: d5b3289224adf5446aa643fd75d53c97, type: 2}
+  - m_WalkBackward: {fileID: 7400000, guid: 7bff136192239f04a900db2e91ada1b1, type: 2}
+  - m_LowPunch: {fileID: 7400000, guid: c7e5c70dd99e6be48afa86a39b04e34c, type: 2}
+  - m_HighPunch: {fileID: 7400000, guid: d0ecd3571eb65334382480a83175cc03, type: 2}
+  - m_HighKick: {fileID: 7400000, guid: f7f9ef313c412fc40a6e28ca36eb268e, type: 2}
+  - m_LowKick: {fileID: 7400000, guid: 4d5f2ba43018d9d44a137f14c9a21824, type: 2}
+  - m_takeDamage: {fileID: 7400000, guid: 6737e086e42455c4681e4392bad32aa9, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

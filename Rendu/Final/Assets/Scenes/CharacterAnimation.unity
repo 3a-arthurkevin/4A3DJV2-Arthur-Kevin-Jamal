@@ -426,6 +426,63 @@ MeshFilter:
   m_PrefabInternal: {fileID: 338183993}
   m_GameObject: {fileID: 391475053}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &586466048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 137432, guid: 1924ec86d63d27f4f9d4e8b3b2684a42, type: 2}
+  m_PrefabInternal: {fileID: 1142899581}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 586466051}
+  - 114: {fileID: 586466049}
+  - 148: {fileID: 586466050}
+  m_Layer: 0
+  m_Name: SimulationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &586466049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11437432, guid: 1924ec86d63d27f4f9d4e8b3b2684a42,
+    type: 2}
+  m_PrefabInternal: {fileID: 1142899581}
+  m_GameObject: {fileID: 586466048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba0c93a9cacdf749aa0f4f23d8437d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_networkView: {fileID: 586466050}
+  m_player1Animatior: {fileID: 0}
+  m_player2Animatior: {fileID: 0}
+--- !u!148 &586466050
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 14837432, guid: 1924ec86d63d27f4f9d4e8b3b2684a42,
+    type: 2}
+  m_PrefabInternal: {fileID: 1142899581}
+  m_GameObject: {fileID: 586466048}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 586466051}
+  m_ViewID:
+    m_ID: 1
+    m_Type: 1
+--- !u!4 &586466051
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 437432, guid: 1924ec86d63d27f4f9d4e8b3b2684a42, type: 2}
+  m_PrefabInternal: {fileID: 1142899581}
+  m_GameObject: {fileID: 586466048}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1920878919}
+  m_RootOrder: 4
 --- !u!1 &620080893
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,6 +584,7 @@ MonoBehaviour:
   m_networkManager: {fileID: 135427963}
   m_uiManager: {fileID: 917032572}
   m_playerManager: {fileID: 2136708880}
+  m_simulationManager: {fileID: 586466049}
 --- !u!1 &843381736
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,6 +691,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  m_buttonLockAfterCommit: []
+  m_waitCommitObject: {fileID: 0}
+  m_errorCommitObject: {fileID: 0}
+  m_showChooseBarButton: {fileID: 0}
+  m_hideChooseBarButton: {fileID: 0}
 --- !u!1 &1000408648
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,6 +1027,7 @@ Transform:
   - {fileID: 726825628}
   - {fileID: 135427962}
   - {fileID: 2136708881}
+  - {fileID: 586466051}
   m_Father: {fileID: 0}
   m_RootOrder: 5
 --- !u!1 &1945420708

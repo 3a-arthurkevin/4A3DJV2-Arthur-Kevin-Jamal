@@ -7,6 +7,12 @@ public class GameSimulationManager : MonoBehaviour
     [SerializeField]
     private NetworkView m_networkView;
 
+    [SerializeField]
+    private Animator m_player1Animatior;
+
+    [SerializeField]
+    private Animator m_player2Animatior;
+
     private List<PlayerAction> m_player1Actions;
     public List<PlayerAction> Player1Actions
     {
@@ -75,5 +81,38 @@ public class GameSimulationManager : MonoBehaviour
     void validateSyncWithServer(bool success)
     {
         m_syncCallBack(success);
+    }
+
+
+    IEnumerator lunchActionPlayerOne(int index)
+    {
+        m_player1Animatior.SetInteger("IdAction", (int)m_player1Actions[index]);
+        m_player1Animatior.SetInteger("IdAction", 0);
+        yield return new WaitForSeconds(m_player1Animatior.GetCurrentAnimatorStateInfo(0).length);
+    }
+
+    IEnumerator lunchActionPlayerTwo(int index)
+    {
+        m_player2Animatior.SetInteger("IdAction", (int)m_player2Actions[index]);
+        m_player2Animatior.SetInteger("IdAction", 0);
+        yield return new WaitForSeconds(m_player2Animatior.GetCurrentAnimatorStateInfo(0).length);
+    }
+    void lunchPlayersActions()
+    {
+        int maxCount = (m_player1Actions.Count > m_player2Actions.Count ? 
+            m_player1Actions.Count : m_player2Actions.Count);
+
+        for (int i = 0; i < maxCount; ++i)
+        {
+            if (i < m_player1Actions.Count)
+            {
+                StartCoroutine(lunchActionPlayerOne(i));
+            }
+
+            if (i < m_player2Actions.Count)
+            {
+                StartCoroutine(lunchActionPlayerTwo(i));
+            }
+        }
     }
 }
