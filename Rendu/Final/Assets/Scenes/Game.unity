@@ -2252,6 +2252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_networkView: {fileID: 657575403}
+  m_player1Animatior: {fileID: 1554777632}
+  m_player2Animatior: {fileID: 976386950}
 --- !u!148 &657575403
 NetworkView:
   m_ObjectHideFlags: 0
@@ -2715,6 +2717,14 @@ Prefab:
       propertyPath: m_hideChooseBarButton
       value: 
       objectReference: {fileID: 891757982}
+    - target: {fileID: 11437432, guid: 1924ec86d63d27f4f9d4e8b3b2684a42, type: 2}
+      propertyPath: m_player1Animatior
+      value: 
+      objectReference: {fileID: 1554777632}
+    - target: {fileID: 11437432, guid: 1924ec86d63d27f4f9d4e8b3b2684a42, type: 2}
+      propertyPath: m_player2Animatior
+      value: 
+      objectReference: {fileID: 976386950}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1924ec86d63d27f4f9d4e8b3b2684a42, type: 2}
   m_RootGameObject: {fileID: 2025200815}
@@ -3202,6 +3212,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 976386948}
   - 136: {fileID: 976386949}
+  - 95: {fileID: 976386950}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -3240,6 +3251,22 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &976386950
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 9516250, guid: e5ee1bf8542079a4ba993da84ee470a8,
+    type: 2}
+  m_PrefabInternal: {fileID: 347071883}
+  m_GameObject: {fileID: 976386947}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fbd7110a259bace448fab4bbec3f47db, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &980994409
 GameObject:
   m_ObjectHideFlags: 0
@@ -5284,6 +5311,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1554777630}
   - 136: {fileID: 1554777631}
+  - 95: {fileID: 1554777632}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -5322,6 +5350,22 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &1554777632
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 9516250, guid: e5ee1bf8542079a4ba993da84ee470a8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1645335223}
+  m_GameObject: {fileID: 1554777629}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fbd7110a259bace448fab4bbec3f47db, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1560771475
 GameObject:
   m_ObjectHideFlags: 0
