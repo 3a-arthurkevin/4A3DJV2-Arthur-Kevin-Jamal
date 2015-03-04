@@ -35,6 +35,22 @@ public class GameUIManager : MonoBehaviour
     [SerializeField]
     private List<Button> m_playerActionsButtons;
 
+    [SerializeField]
+    private List<Button> m_buttonLockAfterCommit;
+
+    [SerializeField]
+    private GameObject m_waitCommitObject;
+
+    [SerializeField]
+    private GameObject m_errorCommitObject;
+
+    [SerializeField]
+    private GameObject m_showChooseBarButton;
+
+    [SerializeField]
+    private GameObject m_hideChooseBarButton;
+
+
     private int m_currentActionNumber;
 
     //Delegate can addAction event
@@ -141,11 +157,15 @@ public class GameUIManager : MonoBehaviour
     public void displayChoose()
     {
         m_chooseAction.SetActive(true);
+        m_hideChooseBarButton.SetActive(true);
+        m_showChooseBarButton.SetActive(false);
     }
 
     public void hideChoose()
     {
         m_chooseAction.SetActive(false);
+        m_hideChooseBarButton.SetActive(false);
+        m_showChooseBarButton.SetActive(true);
     }
 
     public void commitPlayerAction()
@@ -153,13 +173,28 @@ public class GameUIManager : MonoBehaviour
         m_commitPlayerAction();
     }
 
-    public void commitSuccess()
+    public void commitSuccess(bool success)
     {
-        Debug.Log("Commit success");
-    }
+        if (success)
+        {
+            foreach (Button button in m_buttonLockAfterCommit)
+                button.interactable = false;
 
+            m_waitCommitObject.SetActive(true);
+            hideChoose();
+        }
+        else
+        {
+            //display error message
+        }
+    }
     public void launchSimulation()
     {
         m_launchSimulation();
+    }
+
+    public void displayErrorMessage(string message)
+    {
+        //Display Error Message
     }
 }

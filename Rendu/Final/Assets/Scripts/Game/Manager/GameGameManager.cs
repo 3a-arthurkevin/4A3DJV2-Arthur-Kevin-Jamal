@@ -12,10 +12,13 @@ public class GameGameManager : MonoBehaviour
     [SerializeField]
     private GamePlayerManager m_playerManager;
 
+    [SerializeField]
+    private GameSimulationManager m_simulationManager;
+
 
     public void commitPlayerAction()
     {
-        Debug.Log("Commit player action");
+        m_simulationManager.sendActionToServer(m_networkManager.getIdPlayer(Network.player), m_playerManager.PlayerActions.ToArray());
     }
 
     public void launchSimulation()
@@ -32,5 +35,7 @@ public class GameGameManager : MonoBehaviour
 
         m_uiManager.m_pushAction = m_playerManager.pushAction;
         m_uiManager.m_removeAction = m_playerManager.removeAction;
+
+        m_simulationManager.m_syncCallBack = m_uiManager.commitSuccess;
     }
 }

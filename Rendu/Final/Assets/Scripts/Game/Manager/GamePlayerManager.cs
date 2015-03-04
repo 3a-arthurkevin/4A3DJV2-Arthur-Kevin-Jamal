@@ -5,6 +5,11 @@ using System.Collections.Generic;
 public class GamePlayerManager : MonoBehaviour
 {
     private List<PlayerAction> m_playerActions;
+    public List<PlayerAction> PlayerActions
+    {
+        get { return m_playerActions; }
+        set { m_playerActions = value; }
+    }
 
     public GameDelegateDefinition.GetIdPlayer m_getIdPlayer;
 
