@@ -73,6 +73,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 456882}
   - 136: {fileID: 13656874}
+  - 95: {fileID: 9516250}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -429,6 +430,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156892}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &9516250
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156882}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fbd7110a259bace448fab4bbec3f47db, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!135 &13556874
 SphereCollider:
   m_ObjectHideFlags: 1
