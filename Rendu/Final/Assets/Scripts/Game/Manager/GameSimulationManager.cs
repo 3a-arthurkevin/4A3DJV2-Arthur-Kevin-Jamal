@@ -7,6 +7,12 @@ public class GameSimulationManager : MonoBehaviour
     [SerializeField]
     private NetworkView m_networkView;
 
+    [SerializeField]
+    private Animator m_player1Animatior;
+
+    [SerializeField]
+    private Animator m_player2Animatior;
+
     private List<PlayerAction> m_player1Actions;
     public List<PlayerAction> Player1Actions
     {
@@ -120,5 +126,31 @@ public class GameSimulationManager : MonoBehaviour
     private void startSimulation()
     {
         
+    }
+
+
+    IEnumerator lunchActionPlayerOne()
+    {
+        for (int i = 0; i < m_player1Actions.Count; ++i)
+        {
+            m_player1Animatior.SetInteger("IdAction", (int)m_player1Actions[i]);
+            m_player1Animatior.SetInteger("IdAction", 0);
+            yield return new WaitForSeconds(m_player1Animatior.GetCurrentAnimatorStateInfo(0).length);
+        }
+    }
+
+    IEnumerator lunchActionPlayerTwo()
+    {
+        for (int i = 0; i < m_player2Actions.Count; ++i)
+        {
+            m_player2Animatior.SetInteger("IdAction", (int)m_player2Actions[i]);
+            m_player2Animatior.SetInteger("IdAction", 0);
+            yield return new WaitForSeconds(m_player2Animatior.GetCurrentAnimatorStateInfo(0).length);
+        }
+    }
+    void lunchPlayersActions()
+    {
+        StartCoroutine(lunchActionPlayerOne());
+        StartCoroutine(lunchActionPlayerTwo());
     }
 }
