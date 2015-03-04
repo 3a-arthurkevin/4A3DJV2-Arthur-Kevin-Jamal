@@ -25,6 +25,8 @@ public class GameGameManager : MonoBehaviour
 
     void Start()
     {
+        m_playerManager.m_getIdPlayer = m_networkManager.getIdPlayer;
+
         m_uiManager.m_commitPlayerAction = commitPlayerAction;
         m_uiManager.m_launchSimulation = launchSimulation;
 

@@ -6,6 +6,8 @@ public class GamePlayerManager : MonoBehaviour
 {
     private List<PlayerAction> m_playerActions;
 
+    public GameDelegateDefinition.GetIdPlayer m_getIdPlayer;
+
     void Start()
     {
         m_playerActions = new List<PlayerAction>();

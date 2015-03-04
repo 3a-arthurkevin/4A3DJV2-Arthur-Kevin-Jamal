@@ -12,4 +12,6 @@ public class GameDelegateDefinition
     public delegate void CommitPlayerAction();
 
     public delegate void LaunchSimulation();
+
+    public delegate int GetIdPlayer(NetworkPlayer player);
 }
