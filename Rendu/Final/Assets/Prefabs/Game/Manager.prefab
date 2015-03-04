@@ -234,6 +234,20 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  m_buttonLockAfterCommit:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_waitCommitObject: {fileID: 0}
+  m_errorCommitObject: {fileID: 0}
+  m_showChooseBarButton: {fileID: 0}
+  m_hideChooseBarButton: {fileID: 0}
 --- !u!114 &11437432
 MonoBehaviour:
   m_ObjectHideFlags: 1

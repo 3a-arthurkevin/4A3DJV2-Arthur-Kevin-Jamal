@@ -31,12 +31,12 @@ public class GameSimulationManager : MonoBehaviour
 
     public void sendActionToServer(int idPlayer, PlayerAction[] actions)
     {
-        if(Network.isClient)
-        {
+        if (idPlayer > 0)
             m_networkView.RPC("setActionForPlayer", RPCMode.Server, Network.player, idPlayer, actions);
-        }
+        
+        else
+            validateSyncWithServer(false);
     }
-
     [RPC]
     public void setActionForPlayer(NetworkPlayer player, int idPlayer, PlayerAction[] actions)
     {

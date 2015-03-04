@@ -185,16 +185,11 @@ public class GameUIManager : MonoBehaviour
         }
         else
         {
-            //display error message
+            m_errorCommitObject.SetActive(true);
         }
     }
     public void launchSimulation()
     {
         m_launchSimulation();
-    }
-
-    public void displayErrorMessage(string message)
-    {
-        //Display Error Message
     }
 }
