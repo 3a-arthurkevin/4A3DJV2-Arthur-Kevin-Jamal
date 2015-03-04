@@ -125,11 +125,11 @@ public class GameSimulationManager : MonoBehaviour
     [RPC]
     private void startSimulation()
     {
-        
+        launchPlayersActions();
     }
 
 
-    IEnumerator lunchActionPlayerOne()
+    IEnumerator launchActionPlayerOne()
     {
         for (int i = 0; i < m_player1Actions.Count; ++i)
         {
@@ -139,7 +139,7 @@ public class GameSimulationManager : MonoBehaviour
         }
     }
 
-    IEnumerator lunchActionPlayerTwo()
+    IEnumerator launchActionPlayerTwo()
     {
         for (int i = 0; i < m_player2Actions.Count; ++i)
         {
@@ -148,9 +148,9 @@ public class GameSimulationManager : MonoBehaviour
             yield return new WaitForSeconds(m_player2Animatior.GetCurrentAnimatorStateInfo(0).length);
         }
     }
-    void lunchPlayersActions()
+    void launchPlayersActions()
     {
-        StartCoroutine(lunchActionPlayerOne());
-        StartCoroutine(lunchActionPlayerTwo());
+        StartCoroutine(launchActionPlayerOne());
+        StartCoroutine(launchActionPlayerTwo());
     }
 }
