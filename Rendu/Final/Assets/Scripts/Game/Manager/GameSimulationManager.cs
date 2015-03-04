@@ -84,35 +84,28 @@ public class GameSimulationManager : MonoBehaviour
     }
 
 
-    IEnumerator lunchActionPlayerOne(int index)
+    IEnumerator lunchActionPlayerOne()
     {
-        m_player1Animatior.SetInteger("IdAction", (int)m_player1Actions[index]);
-        m_player1Animatior.SetInteger("IdAction", 0);
-        yield return new WaitForSeconds(m_player1Animatior.GetCurrentAnimatorStateInfo(0).length);
+        for (int i = 0; i < m_player1Actions.Count; ++i)
+        {
+            m_player1Animatior.SetInteger("IdAction", (int)m_player1Actions[i]);
+            m_player1Animatior.SetInteger("IdAction", 0);
+            yield return new WaitForSeconds(m_player1Animatior.GetCurrentAnimatorStateInfo(0).length);
+        }
     }
 
-    IEnumerator lunchActionPlayerTwo(int index)
+    IEnumerator lunchActionPlayerTwo()
     {
-        m_player2Animatior.SetInteger("IdAction", (int)m_player2Actions[index]);
-        m_player2Animatior.SetInteger("IdAction", 0);
-        yield return new WaitForSeconds(m_player2Animatior.GetCurrentAnimatorStateInfo(0).length);
+        for (int i = 0; i < m_player2Actions.Count; ++i)
+        {
+            m_player2Animatior.SetInteger("IdAction", (int)m_player2Actions[i]);
+            m_player2Animatior.SetInteger("IdAction", 0);
+            yield return new WaitForSeconds(m_player2Animatior.GetCurrentAnimatorStateInfo(0).length);
+        }
     }
     void lunchPlayersActions()
     {
-        int maxCount = (m_player1Actions.Count > m_player2Actions.Count ? 
-            m_player1Actions.Count : m_player2Actions.Count);
-
-        for (int i = 0; i < maxCount; ++i)
-        {
-            if (i < m_player1Actions.Count)
-            {
-                StartCoroutine(lunchActionPlayerOne(i));
-            }
-
-            if (i < m_player2Actions.Count)
-            {
-                StartCoroutine(lunchActionPlayerTwo(i));
-            }
-        }
+        StartCoroutine(lunchActionPlayerOne());
+        StartCoroutine(lunchActionPlayerTwo());
     }
 }
