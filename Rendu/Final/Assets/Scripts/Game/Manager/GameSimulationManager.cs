@@ -21,59 +21,104 @@ public class GameSimulationManager : MonoBehaviour
         set { m_player2Actions = value; }
     }
 
+    private int m_commitCount;
+
     public GameDelegateDefinition.SyncActionWithServer m_syncCallBack;
+    public GameDelegateDefinition.GetNetworkPlayer m_getNetworkPlayer;
 
     void Start()
     {
         m_player1Actions = new List<PlayerAction>();
         m_player2Actions = new List<PlayerAction>();
+
+        m_commitCount = 0;
     }
 
     public void sendActionToServer(int idPlayer, PlayerAction[] actions)
     {
         if (idPlayer > 0)
-            m_networkView.RPC("setActionForPlayer", RPCMode.Server, Network.player, idPlayer, actions);
-        
+        {
+            m_networkView.RPC("setActionForPlayer", RPCMode.Server, Network.player, idPlayer, GameUtils.PlayerActionsArrayToString(actions));
+        }
         else
             validateSyncWithServer(false);
     }
     [RPC]
-    public void setActionForPlayer(NetworkPlayer player, int idPlayer, PlayerAction[] actions)
+    public void setActionForPlayer(NetworkPlayer sendValidation, int idPlayer, string actions)
     {
+        PlayerAction[] listAction = GameUtils.PlayerActionsStringToArray(actions);
+
+        Debug.LogError("Receive actions for player : " + idPlayer + ", actionsCount : " + listAction.Length);
+
+        bool success = false;
+
+        if (idPlayer == 1)
+        {
+            m_player1Actions.Clear();
+
+            foreach (PlayerAction action in listAction)
+                m_player1Actions.Add(action);
+
+            success = true;
+        }
+        else if (idPlayer == 2)
+        {
+            m_player2Actions.Clear();
+
+            foreach (PlayerAction action in listAction)
+                m_player2Actions.Add(action);
+
+            success = true;
+        }
+        else
+        {
+            Debug.LogError("idPlayer Error");
+        }
+
+        m_networkView.RPC("validateSyncWithServer", sendValidation, success);
+
         if (Network.isServer)
         {
-            bool success = false;
+            if (success)
+                ++m_commitCount;
 
-            if (idPlayer == 1)
+            if (m_commitCount == 2)
             {
-                m_player1Actions.Clear();
-
-                foreach (PlayerAction action in actions)
-                    m_player1Actions.Add(action);
-
-                success = true;
+                setupSimulation();
+                m_commitCount = 0;
             }
-            else if (idPlayer == 2)
-            {
-                m_player2Actions.Clear();
-
-                foreach (PlayerAction action in actions)
-                    m_player2Actions.Add(action);
-
-                success = true;
-            }
-            else
-            {
-                Debug.LogError("idPlayer Error");
-            }
-
-            m_networkView.RPC("validateSyncWithServer", player, success);
         }
     }
 
     [RPC]
     void validateSyncWithServer(bool success)
     {
-        m_syncCallBack(success);
+        if (Network.isServer)
+        {
+            //Server send sync all player
+        }
+        else //Commit client
+            m_syncCallBack(success);
+    }
+
+    private void setupSimulation()
+    {
+        if(Network.isServer)
+        {
+            //Send RPC to client for sync PlayerAction array
+            m_networkView.RPC("setActionForPlayer", m_getNetworkPlayer(1), Network.player, 1, GameUtils.PlayerActionsArrayToString(m_player1Actions.ToArray()));
+            m_networkView.RPC("setActionForPlayer", m_getNetworkPlayer(1), Network.player, 2, GameUtils.PlayerActionsArrayToString(m_player2Actions.ToArray()));
+            m_networkView.RPC("setActionForPlayer", m_getNetworkPlayer(2), Network.player, 1, GameUtils.PlayerActionsArrayToString(m_player1Actions.ToArray()));
+            m_networkView.RPC("setActionForPlayer", m_getNetworkPlayer(2), Network.player, 2, GameUtils.PlayerActionsArrayToString(m_player2Actions.ToArray()));
+
+            //Send RPC to all (Server + client) and start simulation
+            m_networkView.RPC("startSimulation", RPCMode.All);
+        }
+    }
+
+    [RPC]
+    private void startSimulation()
+    {
+        
     }
 }

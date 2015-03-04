@@ -14,6 +14,7 @@ public class GameDelegateDefinition
     public delegate void LaunchSimulation();
 
     public delegate int GetIdPlayer(NetworkPlayer player);
+    public delegate NetworkPlayer GetNetworkPlayer(int idPlayer);
 
     public delegate void SyncActionWithServer(bool success);
 }

@@ -8,7 +8,8 @@ public class GameNetworkManager : MonoBehaviour
 
     void OnPlayerDisconnected(NetworkPlayer player)
     {
-        playerDisconnect();
+        Application.Quit();
+        Debug.Log("An client is disconnect");
     }
 
     public int getIdPlayer(NetworkPlayer player)
@@ -28,5 +29,17 @@ public class GameNetworkManager : MonoBehaviour
         }
 
         return id;
+    }
+
+    public NetworkPlayer getNetworkPlayer(int idPlayer)
+    {
+        --idPlayer;
+
+        if(idPlayer >= 0 && idPlayer < NetworkManager.Players.Count)
+        {
+            return NetworkManager.Players[idPlayer];
+        }
+
+        throw new System.ArgumentException("Error in idPlayer");
     }
 }

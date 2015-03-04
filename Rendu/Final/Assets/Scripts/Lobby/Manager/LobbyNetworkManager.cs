@@ -129,7 +129,6 @@ public class LobbyNetworkManager : MonoBehaviour
     [RPC]
     void LoadGameLevel(int levelPrefix)
     {
-        Debug.LogError("LoadGameLevel");
         Network.SetSendingEnabled(0, false);
         Network.isMessageQueueRunning = false;
 

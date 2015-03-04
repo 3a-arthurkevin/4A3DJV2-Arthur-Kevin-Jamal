@@ -37,5 +37,6 @@ public class GameGameManager : MonoBehaviour
         m_uiManager.m_removeAction = m_playerManager.removeAction;
 
         m_simulationManager.m_syncCallBack = m_uiManager.commitSuccess;
+        m_simulationManager.m_getNetworkPlayer = m_networkManager.getNetworkPlayer;
     }
 }
