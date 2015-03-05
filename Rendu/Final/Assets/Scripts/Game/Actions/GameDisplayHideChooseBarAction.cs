@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameDisplayHideChooseBarAction : MonoBehaviour {
+public class GameDisplayHideChooseBarAction : CustomActionScript
+{
 
     [SerializeField]
     private GameUIManager m_uiManager;
@@ -25,5 +26,10 @@ public class GameDisplayHideChooseBarAction : MonoBehaviour {
 
         m_showButton.SetActive(true);
         gameObject.SetActive(false);
+    }
+
+    protected override IEnumerator DoActionOnEvent(MonoBehaviour eventSender, GameObject args)
+    {
+        throw new System.NotImplementedException();
     }
 }

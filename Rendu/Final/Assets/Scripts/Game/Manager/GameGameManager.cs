@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameGameManager : MonoBehaviour
+public class GameGameManager : CustomActionScript
 {
     [SerializeField]
     private GameNetworkManager m_networkManager;
@@ -26,8 +26,10 @@ public class GameGameManager : MonoBehaviour
         Debug.Log("Launch simu");
     }
 
-    void Start()
+    override public void Start()
     {
+        base.Start();
+
         m_playerManager.m_getIdPlayer = m_networkManager.getIdPlayer;
 
         m_uiManager.m_commitPlayerAction = commitPlayerAction;
@@ -38,5 +40,11 @@ public class GameGameManager : MonoBehaviour
 
         m_simulationManager.m_syncCallBack = m_uiManager.commitSuccess;
         m_simulationManager.m_getNetworkPlayer = m_networkManager.getNetworkPlayer;
+    }
+
+    protected override IEnumerator DoActionOnEvent(MonoBehaviour eventSender, GameObject args)
+    {
+
+        yield return null;
     }
 }

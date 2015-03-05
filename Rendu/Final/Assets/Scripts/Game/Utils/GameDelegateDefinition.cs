@@ -17,4 +17,6 @@ public class GameDelegateDefinition
     public delegate NetworkPlayer GetNetworkPlayer(int idPlayer);
 
     public delegate void SyncActionWithServer(bool success);
+
+    public delegate void haveTakeDamage(int playerId, int value);
 }

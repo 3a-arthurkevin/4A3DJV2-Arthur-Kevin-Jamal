@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameAddActionAction : MonoBehaviour
+public class GameAddActionAction : CustomActionScript
 {
     [SerializeField]
     private GameUIManager m_uiManager;
@@ -12,5 +12,10 @@ public class GameAddActionAction : MonoBehaviour
     public void OnClick()
     {
         m_uiManager.wantToAPushAction(m_action);
+    }
+
+    protected override IEnumerator DoActionOnEvent(MonoBehaviour eventSender, GameObject args)
+    {
+        throw new System.NotImplementedException();
     }
 }

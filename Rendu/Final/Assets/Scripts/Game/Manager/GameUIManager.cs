@@ -6,10 +6,10 @@ using System.Collections.Generic;
 public class GameUIManager : MonoBehaviour
 {
     [SerializeField]
-    private Slider m_healPlayer1;
+    private Slider m_healthPlayer1;
 
     [SerializeField]
-    private Slider m_healPlayer2;
+    private Slider m_healthPlayer2;
 
     /**
      * Set sprite into ispector with this order
@@ -50,6 +50,12 @@ public class GameUIManager : MonoBehaviour
     [SerializeField]
     private GameObject m_hideChooseBarButton;
 
+    [SerializeField]
+    private GameObject m_winPanel;
+
+    [SerializeField]
+    private Text m_playerIdWinText;
+
 
     private int m_currentActionNumber;
 
@@ -69,11 +75,11 @@ public class GameUIManager : MonoBehaviour
     {
         if (player == 1)
         {
-            m_healPlayer1.value = newLife;
+            m_healthPlayer1.value = newLife;
         }
         else
         {
-            m_healPlayer2.value = newLife;
+            m_healthPlayer2.value = newLife;
         }
     }
 
@@ -191,5 +197,26 @@ public class GameUIManager : MonoBehaviour
     public void launchSimulation()
     {
         m_launchSimulation();
+    }
+
+    public void removeLife(int playerId, int value)
+    {
+        if(playerId == 1)
+        {
+            m_healthPlayer1.value = Mathf.Clamp(m_healthPlayer1.value - value, 0, 100);
+        }
+        else if(playerId == 2)
+        {
+            m_healthPlayer2.value = Mathf.Clamp(m_healthPlayer2.value - value, 0, 100);
+        }
+    }
+
+    public void playerWin(int playerId)
+    {
+        m_winPanel.SetActive(true);
+        m_playerIdWinText.text = playerId.ToString();
+
+        foreach (Button button in m_buttonLockAfterCommit)
+            button.interactable = false;
     }
 }
