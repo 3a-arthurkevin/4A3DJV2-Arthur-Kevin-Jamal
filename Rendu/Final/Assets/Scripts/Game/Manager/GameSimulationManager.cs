@@ -134,8 +134,8 @@ public class GameSimulationManager : MonoBehaviour
         for (int i = 0; i < m_player1Actions.Count; ++i)
         {
             m_player1Animatior.SetInteger("IdAction", (int)m_player1Actions[i]);
-            m_player1Animatior.SetInteger("IdAction", 0);
             yield return new WaitForSeconds(m_player1Animatior.GetCurrentAnimatorStateInfo(0).length);
+            m_player1Animatior.SetInteger("IdAction", 0);
         }
     }
 
@@ -144,8 +144,8 @@ public class GameSimulationManager : MonoBehaviour
         for (int i = 0; i < m_player2Actions.Count; ++i)
         {
             m_player2Animatior.SetInteger("IdAction", (int)m_player2Actions[i]);
-            m_player2Animatior.SetInteger("IdAction", 0);
             yield return new WaitForSeconds(m_player2Animatior.GetCurrentAnimatorStateInfo(0).length);
+            m_player2Animatior.SetInteger("IdAction", 0);
         }
     }
     void launchPlayersActions()
